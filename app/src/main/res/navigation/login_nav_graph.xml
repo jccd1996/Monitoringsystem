@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/login_nav_graph"
+            app:startDestination="@id/loginFragment">
+
+    <fragment android:id="@+id/loginFragment"
+              android:name="com.jccd.monitoringsystem.ui.login.LoginFragment"
+              android:label="login_fragment"
+              tools:layout="@layout/login_fragment">
+
+        <action android:id="@+id/toRegisterFragment"
+                app:destination="@id/registerFragment"
+                app:enterAnim="@anim/slide_in_right"
+                app:popExitAnim="@anim/slide_out_right"
+                app:popEnterAnim="@anim/nav_default_enter_anim" app:exitAnim="@anim/nav_default_exit_anim"/>
+    </fragment>
+    <fragment android:id="@+id/registerFragment"
+              android:name="com.jccd.monitoringsystem.ui.register.RegisterFragment"
+              android:label="register_fragment"
+              tools:layout="@layout/register_fragment"/>
+</navigation>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "913363761517",
+    "firebase_url": "https://monitoring-system-9f8d0.firebaseio.com",
+    "project_id": "monitoring-system-9f8d0",
+    "storage_bucket": "monitoring-system-9f8d0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:913363761517:android:8dbce18b1f1b8870",
+        "android_client_info": {
+          "package_name": "com.jccd.monitoringsystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "913363761517-ong1ef410vfhnrm1pd0heamtiqrr7tvr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jccd.monitoringsystem",
+            "certificate_hash": "e8b4c30fc59460acd3962f59a586ebb7e417ac92"
+          }
+        },
+        {
+          "client_id": "913363761517-uicfq4i9favli7s3rn0chg22u5ecvnd2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzqJRBS64oFCXuQbkrymFJvuTm6vI0tfU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "913363761517-uicfq4i9favli7s3rn0chg22u5ecvnd2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
