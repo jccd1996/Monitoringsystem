@@ -5,4 +5,5 @@
     <string name="hint_email">Correo Electrónico</string>
     <string name="hint_password">Contraseña</string>
     <string name="repeat_password">Repetir contraseña</string>
+    <string name="register">Registrarse</string>
 </resources>

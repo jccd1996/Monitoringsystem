@@ -13,4 +13,10 @@
         <item name="colorControlNormal">@color/white</item>
     </style>
 
+    <style name="ButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:colorButtonNormal">@color/white</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="backgroundTint">@color/white</item>
+    </style>
+
 </resources>
