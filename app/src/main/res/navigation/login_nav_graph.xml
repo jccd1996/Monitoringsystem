@@ -6,7 +6,6 @@
 
     <fragment android:id="@+id/loginFragment"
               android:name="com.jccd.monitoringsystem.ui.login.LoginFragment"
-              android:label="login_fragment"
               tools:layout="@layout/login_fragment">
 
         <action android:id="@+id/toRegisterFragment"
@@ -17,6 +16,5 @@
     </fragment>
     <fragment android:id="@+id/registerFragment"
               android:name="com.jccd.monitoringsystem.ui.register.RegisterFragment"
-              android:label="register_fragment"
               tools:layout="@layout/register_fragment"/>
 </navigation>
