@@ -6,4 +6,33 @@
     <string name="hint_password">Contraseña</string>
     <string name="repeat_password">Repetir contraseña</string>
     <string name="register">Registrarse</string>
+    <string name="lab_cellPhone">Celular</string>
+    <string name="empty_field_fullname">Ingrese un nombre completo</string>
+    <string name="empty_field_email">Ingrese un correo</string>
+    <string name="invalid_name">Ingrese un nombre valido</string>
+    <string name="invalid_email">Ingrese un correo valido</string>
+    <string name="empty_field_cellphone">Ingrese un numero de celular.</string>
+    <string name="incomplete_cell_number">Numero de celular incompleto</string>
+    <string name="empty_field_password">Ingrese una contraseña</string>
+    <string name="short_field_password">La contrasena debe tener minimo 6 caracteres</string>
+    <string name="different_field_password">Las contraseña no coinciden</string>
+    <string name="need_accept_conditions">Debe aceptar los terminos y condiciones</string>
+    <string name="iniciar_sesion">Iniciar sesion</string>
+    <string name="error_load_photo">ERROR Cargando Foto</string>
+    <string name="no_tienes_cuenta">No tienes una cuenta?
+        <font fgcolor='#00008b'>
+            <u>
+                <n>Registrate</n>
+            </u>
+        </font>
+    </string>
+    <string name="welcomeMessage">Bienvenido</string>
+    <string name="check_internet_connection">Revisa tu conexión a internet</string>
+    <string name="close_session">Cerrar sesión</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="lab_dialog_logout_confirmation_message">¿Desea cerrar sesión?</string>
+    <string name="lab_dialog_confirmation_message">Confirmar</string>
+    <string name="lab_dialog_cancel_message">Cancelar</string>
+    <string name="lab_dialog_outapp_confirmation_message">¿Desea salir de la aplicación?</string>
 </resources>
