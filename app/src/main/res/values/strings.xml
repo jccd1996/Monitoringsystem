@@ -19,8 +19,8 @@
     <string name="need_accept_conditions">Debe aceptar los terminos y condiciones</string>
     <string name="iniciar_sesion">Iniciar sesion</string>
     <string name="error_load_photo">ERROR Cargando Foto</string>
-    <string name="no_tienes_cuenta">No tienes una cuenta?
-        <font fgcolor='#00008b'>
+    <string name="no_tienes_cuenta">¿No tienes una cuenta?
+        <font fgcolor='#ffffff'>
             <u>
                 <n>Registrate</n>
             </u>
@@ -35,4 +35,9 @@
     <string name="lab_dialog_confirmation_message">Confirmar</string>
     <string name="lab_dialog_cancel_message">Cancelar</string>
     <string name="lab_dialog_outapp_confirmation_message">¿Desea salir de la aplicación?</string>
+
+    <!-- Login fragment -->
+    <string name="label_sign_up">Inicia sesión con tu correo</string>
+    <string name="forgot_paswword">¿Olvidaste tu contraseña?</string>
+    <string name="label_login">Ingresar</string>
 </resources>
