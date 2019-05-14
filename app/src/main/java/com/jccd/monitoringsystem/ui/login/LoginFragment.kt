@@ -1,16 +1,15 @@
 package com.jccd.monitoringsystem.ui.login
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
-import androidx.navigation.navOptions
 import com.jccd.monitoringsystem.R
 import com.jccd.monitoringsystem.utils.SafeClickListener
 import kotlinx.android.synthetic.main.login_fragment.*
+
 
 
 class LoginFragment : Fragment() {
