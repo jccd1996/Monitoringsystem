@@ -13,8 +13,11 @@ import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
+import android.view.View
 import com.jccd.monitoringsystem.R
+import com.jccd.monitoringsystem.db.model.User
 import com.jccd.monitoringsystem.ui.LoginActivity
+import kotlinx.android.synthetic.main.nav_header_main.view.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, IMainMVP.view  {
 
@@ -25,9 +28,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(R.layout.activity_main)
         presenter = MainPresenter(this)
         presenter.validateLogUser()
+        val user = presenter.loadDataUser()
+        setDataToNavDrawer(user)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-
         val fab: FloatingActionButton = findViewById(R.id.fab)
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -109,5 +113,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    fun setDataToNavDrawer(user: User){
+        val navHead = findViewById<View>(R.id.nav_view) as NavigationView
+        val head = navHead.getHeaderView(0)
+        head.tvName.text = user.fullName
+        head.tvEmail.text = user.email
     }
 }

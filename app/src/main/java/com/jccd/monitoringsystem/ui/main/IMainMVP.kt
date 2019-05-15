@@ -1,6 +1,7 @@
 package com.jccd.monitoringsystem.ui.main
 
 import android.app.Activity
+import com.jccd.monitoringsystem.db.model.User
 
 interface IMainMVP {
     interface view{
@@ -10,5 +11,6 @@ interface IMainMVP {
     interface presenter{
         fun validateLogUser()
         fun closeSession()
+        fun loadDataUser(): User
     }
 }
