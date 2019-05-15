@@ -76,6 +76,9 @@ dependencies {
     implementation "com.github.castorflex.smoothprogressbar:library:$smoothprogressbar_version"
     implementation "com.github.castorflex.smoothprogressbar:library-circular:$smoothprogresscircular_version"
 
+    //View database and sharedPreferences in web
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.4'
+
 //    //LifeCycle extension
 //    implementation 'android.arch.lifecycle:extensions:1.1.1'
 
