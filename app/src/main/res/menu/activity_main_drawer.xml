@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+                android:id="@+id/nav_temperature"
+                android:icon="@drawable/ic_temperature"
+                android:title="@string/menu_temperature"/>
+        <item
+                android:id="@+id/nav_level_water"
+                android:icon="@drawable/ic_level_water"
+                android:title="@string/menu_level_water"/>
+        <item
+                android:id="@+id/nav_level_ph"
+                android:icon="@drawable/ic_ph"
+                android:title="@string/menu_ph"/>
+        <item
+                android:id="@+id/nav_tools"
+                android:icon="@drawable/ic_history"
+                android:title="@string/menu_history"/>
+    </group>
+
+    <item android:title="@string/menu_title_items">
+        <menu>
+            <item
+                    android:id="@+id/nav_archive"
+                    android:icon="@drawable/ic_archive_fields"
+                    android:title="@string/menu_archive"/>
+            <item
+                    android:id="@+id/nav_download"
+                    android:icon="@drawable/ic_file_download_black_24dp"
+                    android:title="@string/menu_download"/>
+
+            <item
+                    android:id="@+id/nav_log_out"
+                    android:title="@string/close_session"
+                    android:icon="@drawable/ic_exit_to_app_black_24dp"/>
+        </menu>
+    </item>
+
+</menu>
