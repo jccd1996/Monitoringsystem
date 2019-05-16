@@ -1,6 +1,7 @@
 package com.jccd.monitoringsystem.ui.main
 
 import android.app.Activity
+import android.app.DownloadManager
 import com.jccd.monitoringsystem.db.model.User
 
 interface IMainMVP {
@@ -12,5 +13,6 @@ interface IMainMVP {
         fun validateLogUser()
         fun closeSession()
         fun loadDataUser(): User
+        fun downloadAllDataExcel(manager: DownloadManager)
     }
 }

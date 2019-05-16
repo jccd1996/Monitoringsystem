@@ -1,6 +1,8 @@
 package com.jccd.monitoringsystem.ui.main
 
 import android.app.Activity
+import android.app.DownloadManager
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.core.view.GravityCompat
@@ -12,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
@@ -29,6 +32,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private lateinit var navController: NavController
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navOptions: NavOptions
+    private lateinit var manager: DownloadManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,12 +57,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-
+        manager = getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
         // NavigationUI.setupActionBarWithNavController(this,navController,drawerLayout)
 
         NavigationUI.setupWithNavController(navView, navController)
 
         navView.setNavigationItemSelectedListener(this)
+
     }
 
     override fun onBackPressed() {
@@ -141,7 +146,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             }
             R.id.nav_download -> {
-
+                presenter.downloadAllDataExcel(manager)
             }
             R.id.nav_log_out -> {
                 presenter.closeSession()
