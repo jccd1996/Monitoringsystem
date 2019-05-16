@@ -62,4 +62,7 @@
     <string name="menu_archive">Destacados</string>
     <string name="menu_download">Descargar Excel</string>
     <string name="menu_title_items">Opciones</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

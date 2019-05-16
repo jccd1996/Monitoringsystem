@@ -18,7 +18,7 @@
                 android:icon="@drawable/ic_ph"
                 android:title="@string/menu_ph"/>
         <item
-                android:id="@+id/nav_tools"
+                android:id="@+id/nav_history"
                 android:icon="@drawable/ic_history"
                 android:title="@string/menu_history"/>
     </group>
