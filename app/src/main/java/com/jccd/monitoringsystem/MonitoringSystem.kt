@@ -10,8 +10,6 @@ class MonitoringSystem: Application() {
 
     companion object{
         lateinit var sInstance: MonitoringSystem
-        private set
-
         fun getInstance() = sInstance
 
     }

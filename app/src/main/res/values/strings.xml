@@ -48,5 +48,21 @@
     <string name="label_remember_password">Recordar contraseña</string>
     <string name="label_send_rember_password">Enviar correo</string>
     <string name="label_error_send_email">Error al enviar el correo</string>
-    <string name="label_succesfull_send_email">Revisa tu correo electrónico </string>
+    <string name="label_succesfull_send_email">Revisa tu correo electrónico</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <!-- Nav drawer -->
+    <string name="menu_temperature">Temperatura</string>
+    <string name="menu_level_water">Nivel del agua</string>
+    <string name="menu_ph">Nivel de pH</string>
+    <string name="menu_history">Historial</string>
+    <string name="menu_archive">Destacados</string>
+    <string name="menu_download">Descargar Excel</string>
+    <string name="menu_title_items">Opciones</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
