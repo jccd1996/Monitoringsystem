@@ -4,7 +4,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fillViewport="true"
-            tools:context=".ui.temperature.TemperatureFragment"
+            tools:context=".ui.temperature.ui.TemperatureFragment"
 >
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -14,17 +14,25 @@
                 android:text="test"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:id="@+id/tvTemperatura"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+                android:textSize="30sp"
+                app:layout_constraintTop_toBottomOf="@+id/tvDate"
+                app:layout_constraintBottom_toTopOf="@+id/bTemperatura" app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="8dp" app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintBottom_toTopOf="@+id/bTemperatura" android:textSize="30sp"/>
+                android:layout_marginEnd="8dp"/>
         <Button
                 android:text="Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:id="@+id/bTemperatura"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvTemperatura" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@+id/tvTemperatura"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvDate"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/tvTemperatura" app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="8dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>

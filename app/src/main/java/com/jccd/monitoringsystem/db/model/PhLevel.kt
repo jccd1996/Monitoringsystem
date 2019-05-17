@@ -8,5 +8,5 @@ data class PhLevel (
     @SerializedName("entry_id")
     val entryId: Int,
     @SerializedName("field3")
-    val waterLevel: String
+    val phLevel: String
 )
