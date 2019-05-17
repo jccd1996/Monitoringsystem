@@ -4,6 +4,7 @@ class Constants {
     companion object {
         val API_KEY_THING_SPEAK = "HL56NN0FFFEG4ICN"
         val URL_DOWNLOAD_ALL_DATA = "https://api.thingspeak.com/channels/765396/feeds.csv?api_key=HL56NN0FFFEG4ICN"
+        val BASE_URL = "https://api.thingspeak.com/channels/765396/"
         val CORRECT_DATA = 100
         val EMPTY_FUllNAME = 101
         val EMPTY_EMAIL = 102

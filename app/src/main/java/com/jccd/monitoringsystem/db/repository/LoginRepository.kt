@@ -20,9 +20,7 @@ class LoginRepository(private var presenter: LoginPresenter) : ILoginRepository{
         mAuth!!.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    presenter.loginSuccesfull()
                     getUserData()
-
                 } else {
                     var errorMessage = Constants.EMPTY
                     if (task.exception.toString() == Constants.ERROR_LOGIN_PASSWORD_INVALID_FIREBASE) {
@@ -51,6 +49,7 @@ class LoginRepository(private var presenter: LoginPresenter) : ILoginRepository{
                     val user = User(fullName!!, email!!, cellPhone!!)
                     user.uid = uid
                     saveUser(user)
+                    presenter.loginSuccesfull()
                 }
             }
         })

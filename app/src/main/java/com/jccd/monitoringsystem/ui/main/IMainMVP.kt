@@ -12,7 +12,7 @@ interface IMainMVP {
     interface presenter{
         fun validateLogUser()
         fun closeSession()
-        fun loadDataUser(): User
+        fun loadDataUser(): User?
         fun downloadAllDataExcel(manager: DownloadManager)
     }
 }

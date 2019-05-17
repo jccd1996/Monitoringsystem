@@ -5,6 +5,7 @@ import android.app.DownloadManager
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.core.view.GravityCompat
 import androidx.appcompat.app.ActionBarDrawerToggle
 import android.view.MenuItem
@@ -20,6 +21,8 @@ import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.jccd.monitoringsystem.R
 import com.jccd.monitoringsystem.db.model.User
 import com.jccd.monitoringsystem.ui.LoginActivity
@@ -27,6 +30,7 @@ import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.nav_header_main.view.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, IMainMVP.view {
+
 
     private lateinit var presenter: IMainMVP.presenter
     private lateinit var navController: NavController
@@ -40,8 +44,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         presenter = MainPresenter(this)
         presenter.validateLogUser()
 
-        val user = presenter.loadDataUser()
-        setDataToNavDrawer(user)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true);
@@ -63,6 +65,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         NavigationUI.setupWithNavController(navView, navController)
 
         navView.setNavigationItemSelectedListener(this)
+        presenter.loadDataUser()
+
+        val user: User? = presenter.loadDataUser()
+        setDataToNavDrawer(user!!)
 
     }
 
@@ -174,5 +180,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             .setPopUpTo(destination, true)
             .build()
         return navOptions
+    }
+
+    override fun onResume() {
+        super.onResume()
+        presenter.loadDataUser()
     }
 }

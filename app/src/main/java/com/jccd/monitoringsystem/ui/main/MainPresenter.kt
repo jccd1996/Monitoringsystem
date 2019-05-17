@@ -20,7 +20,7 @@ import java.io.File
 
 class MainPresenter(private val view: IMainMVP.view) : IMainMVP.presenter {
 
-    private val sessionManager = SessionManager(MonitoringSystem.getInstance().getContext()!!)
+    private val sessionManager = SessionManager(MonitoringSystem.sInstance.getContext()!!)
     private val context: Context = MonitoringSystem.getInstance().getContext()!!
 
     override fun closeSession() {
@@ -28,12 +28,13 @@ class MainPresenter(private val view: IMainMVP.view) : IMainMVP.presenter {
         builder.setTitle(R.string.close_session)
         builder.setMessage(R.string.lab_dialog_logout_confirmation_message)
 
-        builder.setPositiveButton(R.string.lab_dialog_confirmation_message){dialog, which ->
+        builder.setPositiveButton(R.string.lab_dialog_confirmation_message) { dialog, which ->
             FirebaseAuth.getInstance().signOut()
+            sessionManager.logOut()
             view.finishActivity()
         }
 
-        builder.setNegativeButton(R.string.lab_dialog_cancel_message){dialog,which ->
+        builder.setNegativeButton(R.string.lab_dialog_cancel_message) { dialog, which ->
             dialog.dismiss()
         }
         val dialog: AlertDialog = builder.create()
@@ -48,21 +49,26 @@ class MainPresenter(private val view: IMainMVP.view) : IMainMVP.presenter {
         }
     }
 
-    override fun loadDataUser(): User {
+    override fun loadDataUser(): User? {
         val user = sessionManager.getUserProfile()
-         return user!!
+        return user
     }
 
     override fun downloadAllDataExcel(manager: DownloadManager) {
         val request = DownloadManager.Request(Uri.parse(Constants.URL_DOWNLOAD_ALL_DATA))
-        val progress = ProgressDialog.show(view.getMainActivity(), context.getString(R.string.download_data), context.getString(R.string.download_data_description), true)
-        val fileName =  context.getString(R.string.download_data_file)
+        val progress = ProgressDialog.show(
+            view.getMainActivity(),
+            context.getString(R.string.download_data),
+            context.getString(R.string.download_data_description),
+            true
+        )
+        val fileName = context.getString(R.string.download_data_file)
         request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI or DownloadManager.Request.NETWORK_MOBILE)
         request.setTitle(context.getString(R.string.download_data))
         request.setDescription(context.getString(R.string.download_data_description))
         request.allowScanningByMediaScanner()
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
-        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,fileName)
+        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, fileName)
 
         val onComplete = object : BroadcastReceiver() {
             override fun onReceive(context: Context, intent: Intent) {
