@@ -21,7 +21,6 @@ class PhLevelFragment : Fragment(), IPhLevelMVP.view {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         presenter = PhLevelPresenter(this)
         customToolbar()
         return inflater.inflate(R.layout.fragment_ph, container, false)

@@ -1,16 +1,11 @@
 package com.jccd.monitoringsystem.ui.temperature.ui
 
-
-import android.content.Context
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import com.jccd.monitoringsystem.MonitoringSystem
-
 import com.jccd.monitoringsystem.R
 import com.jccd.monitoringsystem.db.model.Temperature
 import com.jccd.monitoringsystem.ui.temperature.ITemperatureMVP
@@ -28,7 +23,6 @@ class TemperatureFragment : Fragment(), ITemperatureMVP.view {
     ): View? {
         presenter = TemperaturePresenter(this)
         customToolbar()
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_temperature, container, false)
     }
 
@@ -39,7 +33,8 @@ class TemperatureFragment : Fragment(), ITemperatureMVP.view {
     }
 
     override fun setDataTemperature(temperature: Temperature) {
-        tvTemperatura.text = temperature.temperature
+        tvTemperatura.text = temperature.temperature + Constants.EMPTY_SPACE +
+                activity!!.applicationContext.getString(R.string.temperature_symbol)
         tvDate.text = temperature.createdAt
     }
 

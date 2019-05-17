@@ -5,7 +5,7 @@
             app:startDestination="@id/loginFragment">
 
     <fragment android:id="@+id/loginFragment"
-              android:name="com.jccd.monitoringsystem.ui.login.LoginFragment"
+              android:name="com.jccd.monitoringsystem.ui.login.ui.LoginFragment"
               tools:layout="@layout/login_fragment">
 
         <action android:id="@+id/toRegisterFragment"

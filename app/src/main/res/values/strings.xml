@@ -68,5 +68,17 @@
     <string name="download_data">Descargando archivo en excel</string>
     <string name="download_data_description">Descargando datos de excel...</string>
     <string name="download_data_file">MonitoringSystem.csv</string>
+    <string name="last_update">Última actualización:</string>
+
+    <!-- TemperatureFragment -->
+    <string name="value_temperature">La temperatura es:</string>
+    <string name="temperature_symbol">°</string>
+
+    <!-- WaterlevelFragment -->
+    <string name="vale_water_level">El nivel del agua es:</string>
+    <string name="unit_water_level">cm</string>
+
+    <!-- PhFragment -->
+    <string name="value_ph_level">El nivel de pH es:</string>
 
 </resources>

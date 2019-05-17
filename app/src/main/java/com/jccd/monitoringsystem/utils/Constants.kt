@@ -27,6 +27,7 @@ class Constants {
         val CHOOSE_PICTURE = "Seleccionar una foto"
         val NO_PHOTO = "NoPhoto"
         val EMPTY = ""
+        val EMPTY_SPACE = " "
         val PICTURE_PATH = "/userProfilePicture/"
         val LOGOUT_USER = 111
 

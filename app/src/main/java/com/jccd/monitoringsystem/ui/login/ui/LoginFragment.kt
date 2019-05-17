@@ -1,4 +1,4 @@
-package com.jccd.monitoringsystem.ui.login
+package com.jccd.monitoringsystem.ui.login.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +10,8 @@ import android.widget.Toast
 import androidx.navigation.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.jccd.monitoringsystem.R
+import com.jccd.monitoringsystem.ui.login.ILoginMVP
+import com.jccd.monitoringsystem.ui.login.LoginPresenter
 import com.jccd.monitoringsystem.ui.main.MainActivity
 import com.jccd.monitoringsystem.utils.SafeClickListener
 import com.jccd.monitoringsystem.utils.ValidateFields
