@@ -5,7 +5,7 @@
             app:startDestination="@id/temperatureFragment">
 
     <fragment android:id="@+id/temperatureFragment"
-              android:name="com.jccd.monitoringsystem.ui.temperature.ui.TemperatureFragment"
+              android:name="com.jccd.monitoringsystem.ui.temperature.detail.ui.TemperatureFragment"
               android:label="@string/menu_temperature" tools:layout="@layout/fragment_temperature"/>
 
     <fragment android:id="@+id/waterLevelFragment" android:name="com.jccd.monitoringsystem.ui.water_level.ui.WaterLevelFragment"

@@ -73,6 +73,8 @@
     <!-- TemperatureFragment -->
     <string name="value_temperature">La temperatura es:</string>
     <string name="temperature_symbol">°</string>
+    <string name="see_graphics">Ver gráficas</string>
+    <string name="date_list_temperature">Dato subido el:</string>
 
     <!-- WaterlevelFragment -->
     <string name="vale_water_level">El nivel del agua es:</string>
@@ -80,5 +82,18 @@
 
     <!-- PhFragment -->
     <string name="value_ph_level">El nivel de pH es:</string>
+    <string name="title_activity_temperature_history">TemperatureHistoryActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- HistoryActivity -->
+    <string name="one_day">Hoy</string>
+    <string name="seven_days">Semana</string>
+    <string name="one_month">Mes</string>
+
 
 </resources>

@@ -1,5 +1,6 @@
-package com.jccd.monitoringsystem.ui.temperature.ui
+package com.jccd.monitoringsystem.ui.temperature.detail.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,10 +9,12 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import com.jccd.monitoringsystem.R
 import com.jccd.monitoringsystem.db.model.Temperature
-import com.jccd.monitoringsystem.ui.temperature.ITemperatureMVP
-import com.jccd.monitoringsystem.ui.temperature.TemperaturePresenter
+import com.jccd.monitoringsystem.ui.temperature.detail.ITemperatureMVP
+import com.jccd.monitoringsystem.ui.temperature.detail.TemperaturePresenter
+import com.jccd.monitoringsystem.ui.temperature.history.TemperatureHistoryActivity
 import com.jccd.monitoringsystem.utils.Constants
 import kotlinx.android.synthetic.main.fragment_temperature.*
+
 
 class TemperatureFragment : Fragment(), ITemperatureMVP.view {
 
@@ -30,6 +33,11 @@ class TemperatureFragment : Fragment(), ITemperatureMVP.view {
         super.onViewCreated(view, savedInstanceState)
         presenter.loadLastTemperatureField()
 
+        bTemperatureHistoy.setOnClickListener {
+            val intent = Intent(activity,TemperatureHistoryActivity::class.java)
+            intent.putExtra("type",14)
+            startActivity(intent)
+        }
     }
 
     override fun setDataTemperature(temperature: Temperature) {

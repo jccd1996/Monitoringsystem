@@ -14,6 +14,9 @@ interface GetData {
     @GET( "field/1/last.json")
     fun getTemperatureLastField(@Query("api_key") apiKey: String): Call<Temperature>
 
+    @GET("field/1.json")
+    fun getMonthDataTemperature(@Query("api_key") apiKey: String): Call<List<Temperature>>
+
     @GET( "field/2/last.json")
     fun getWaterLevelLastField(@Query("api_key") apiKey: String): Call<WaterLevel>
 
