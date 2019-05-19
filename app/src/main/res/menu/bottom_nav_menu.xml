@@ -2,17 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-            android:id="@+id/dayHistoryTemperatureFragment"
+            android:id="@+id/dayHistoryFragment"
             android:icon="@drawable/ic_today_black_24dp"
             android:title="@string/one_day"/>
 
     <item
-            android:id="@+id/weekHistoryTemperatureFragment"
+            android:id="@+id/weekHistoryFragment"
             android:icon="@drawable/ic_date_week_black_24dp"
             android:title="@string/seven_days"/>
 
     <item
-            android:id="@+id/monthHistoryTemperatureFragment"
+            android:id="@+id/monthHistoryFragment"
             android:icon="@drawable/ic_event_month_24dp"
             android:title="@string/one_month"/>
 

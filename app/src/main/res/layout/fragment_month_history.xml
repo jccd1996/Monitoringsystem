@@ -4,7 +4,7 @@
                                                    xmlns:tools="http://schemas.android.com/tools"
                                                    android:layout_width="match_parent"
                                                    android:layout_height="wrap_content"
-                                                   tools:context=".ui.temperature.history.month_history.MonthHistoryTemperatureFragment">
+                                                   tools:context=".ui.historylist.history.month_history.MonthHistoryFragment">
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content" app:layout_constraintEnd_toEndOf="parent"

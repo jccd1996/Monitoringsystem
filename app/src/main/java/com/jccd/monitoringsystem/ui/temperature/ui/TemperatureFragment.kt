@@ -1,4 +1,4 @@
-package com.jccd.monitoringsystem.ui.temperature.detail.ui
+package com.jccd.monitoringsystem.ui.temperature.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,9 +9,9 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import com.jccd.monitoringsystem.R
 import com.jccd.monitoringsystem.db.model.Temperature
-import com.jccd.monitoringsystem.ui.temperature.detail.ITemperatureMVP
-import com.jccd.monitoringsystem.ui.temperature.detail.TemperaturePresenter
-import com.jccd.monitoringsystem.ui.temperature.history.TemperatureHistoryActivity
+import com.jccd.monitoringsystem.ui.historylist.HistoryActivity
+import com.jccd.monitoringsystem.ui.temperature.ITemperatureMVP
+import com.jccd.monitoringsystem.ui.temperature.TemperaturePresenter
 import com.jccd.monitoringsystem.utils.Constants
 import kotlinx.android.synthetic.main.fragment_temperature.*
 
@@ -19,6 +19,7 @@ import kotlinx.android.synthetic.main.fragment_temperature.*
 class TemperatureFragment : Fragment(), ITemperatureMVP.view {
 
     private lateinit var presenter: ITemperatureMVP.presenter
+    private val TYPE_KEY = "type"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,8 +35,8 @@ class TemperatureFragment : Fragment(), ITemperatureMVP.view {
         presenter.loadLastTemperatureField()
 
         bTemperatureHistoy.setOnClickListener {
-            val intent = Intent(activity,TemperatureHistoryActivity::class.java)
-            intent.putExtra("type",14)
+            val intent = Intent(activity, HistoryActivity::class.java)
+            intent.putExtra(TYPE_KEY,1)
             startActivity(intent)
         }
     }

@@ -3,7 +3,7 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context=".ui.temperature.history.day_history.DayHistoryTemperatureFragment">
+             tools:context=".ui.historylist.history.day_history.DayHistoryFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

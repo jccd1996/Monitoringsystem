@@ -1,10 +1,10 @@
-package com.jccd.monitoringsystem.ui.temperature.detail
+package com.jccd.monitoringsystem.ui.temperature
 
 import android.util.Log
 import com.google.gson.Gson
 import com.jccd.monitoringsystem.MonitoringSystem
 import com.jccd.monitoringsystem.db.model.Temperature
-import com.jccd.monitoringsystem.ui.temperature.detail.ITemperatureMVP
+import com.jccd.monitoringsystem.ui.temperature.ITemperatureMVP
 import com.jccd.monitoringsystem.utils.Constants
 import retrofit2.Call
 import retrofit2.Callback

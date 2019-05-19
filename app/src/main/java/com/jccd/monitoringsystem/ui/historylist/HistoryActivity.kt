@@ -1,7 +1,6 @@
-package com.jccd.monitoringsystem.ui.temperature.history
+package com.jccd.monitoringsystem.ui.historylist
 
 import android.os.Bundle
-import android.os.Message
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -9,51 +8,45 @@ import androidx.navigation.NavController
 import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
 import com.jccd.monitoringsystem.R
-import com.jccd.monitoringsystem.ui.temperature.history.day_history.DayHistoryTemperatureFragment
 
 
-class TemperatureHistoryActivity : AppCompatActivity() {
+class HistoryActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
-    private  var message: Int = 0
+    private var message: Int = 0
     private lateinit var bundle: Bundle
     private lateinit var navOptions: NavOptions
 
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
-            R.id.dayHistoryTemperatureFragment -> {
-               // navController.navigate(R.id.dayHistoryTemperatureFragment,bundle)
-                if (navController.currentDestination!!.id != R.id.dayHistoryTemperatureFragment) {
-                    navController.popBackStack(R.id.dayHistoryTemperatureFragment, true)
+            R.id.dayHistoryFragment -> {
+                if (navController.currentDestination!!.id != R.id.dayHistoryFragment) {
+                    navController.popBackStack(R.id.dayHistoryFragment, true)
                     navController.navigate(
-                        R.id.dayHistoryTemperatureFragment,
+                        R.id.dayHistoryFragment,
                         bundle,
                         destinationFragment(navController.currentDestination!!.id)
                     )
                 }
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.weekHistoryTemperatureFragment -> {
-              //  navController.navigate(R.id.weekHistoryTemperatureFragment,bundle)
-                if (navController.currentDestination!!.id != R.id.weekHistoryTemperatureFragment) {
-                    navController.popBackStack(R.id.weekHistoryTemperatureFragment, true)
+            R.id.weekHistoryFragment -> {
+                if (navController.currentDestination!!.id != R.id.weekHistoryFragment) {
+                    navController.popBackStack(R.id.weekHistoryFragment, true)
                     navController.navigate(
-                        R.id.weekHistoryTemperatureFragment,
+                        R.id.weekHistoryFragment,
                         bundle,
                         destinationFragment(navController.currentDestination!!.id)
                     )
                 }
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.monthHistoryTemperatureFragment -> {
-              //  navController.navigate(R.id.monthHistoryTemperatureFragment,bundle)
-                if (navController.currentDestination!!.id != R.id.monthHistoryTemperatureFragment) {
-                    navController.popBackStack(R.id.monthHistoryTemperatureFragment, true)
+            R.id.monthHistoryFragment -> {
+                if (navController.currentDestination!!.id != R.id.monthHistoryFragment) {
+                    navController.popBackStack(R.id.monthHistoryFragment, true)
                     navController.navigate(
-                        R.id.monthHistoryTemperatureFragment,
+                        R.id.monthHistoryFragment,
                         bundle,
                         destinationFragment(navController.currentDestination!!.id)
                     )
@@ -66,21 +59,22 @@ class TemperatureHistoryActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_temperature_history)
+        setContentView(R.layout.activity_history)
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
         val intent = intent
-        message = intent.getIntExtra("type",0)
+        message = intent.getIntExtra("type", 0)
         bundle = Bundle()
-        bundle.putInt("type",message)
+        bundle.putInt("type", message)
 
-        findNavController(R.id.fragment_container_temperature_history).setGraph(R.navigation.temperature_history_graph,bundle)
-        navController= Navigation.findNavController(this,R.id.fragment_container_temperature_history)
-
-       // navView.setupWithNavController(navController)
+        findNavController(R.id.fragment_container_temperature_history).setGraph(
+            R.navigation.history_graph,
+            bundle
+        )
+        navController = Navigation.findNavController(this, R.id.fragment_container_temperature_history)
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
     }
 
@@ -90,5 +84,4 @@ class TemperatureHistoryActivity : AppCompatActivity() {
             .build()
         return navOptions
     }
-
 }

@@ -1,4 +1,4 @@
-package com.jccd.monitoringsystem.ui.temperature.detail
+package com.jccd.monitoringsystem.ui.temperature
 
 import com.jccd.monitoringsystem.db.model.Temperature
 

@@ -4,7 +4,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fillViewport="true"
-            tools:context=".ui.temperature.detail.ui.TemperatureFragment"
+            tools:context=".ui.temperature.ui.TemperatureFragment"
 >
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
