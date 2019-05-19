@@ -54,6 +54,7 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+
     <!-- Nav drawer -->
     <string name="menu_temperature">Temperatura</string>
     <string name="menu_level_water">Nivel del agua</string>
@@ -63,6 +64,36 @@
     <string name="menu_download">Descargar Excel</string>
     <string name="menu_title_items">Opciones</string>
 
+    <!-- Download Excel -->
+    <string name="download_data">Descargando archivo en excel</string>
+    <string name="download_data_description">Descargando datos de excel...</string>
+    <string name="download_data_file">MonitoringSystem.csv</string>
+    <string name="last_update">Última actualización:</string>
+
+    <!-- TemperatureFragment -->
+    <string name="value_temperature">La temperatura es:</string>
+    <string name="temperature_symbol">°C</string>
+    <string name="see_graphics">Ver gráficas</string>
+    <string name="date_list_temperature">Dato subido el:</string>
+
+    <!-- WaterlevelFragment -->
+    <string name="vale_water_level">El nivel del agua es:</string>
+    <string name="unit_water_level">cm</string>
+
+    <!-- PhFragment -->
+    <string name="value_ph_level">El nivel de pH es:</string>
+    <string name="title_activity_temperature_history">TemperatureHistoryActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- HistoryActivity -->
+    <string name="one_day">Hoy</string>
+    <string name="seven_days">Semana</string>
+    <string name="one_month">Mes</string>
+
+
 </resources>

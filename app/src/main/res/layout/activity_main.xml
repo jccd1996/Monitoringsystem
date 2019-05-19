@@ -33,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:defaultNavHost="true"
-                android:id="@+id/fragment_container_main"
+                android:id="@+id/fragment_container_temperature_history"
                 app:navGraph="@navigation/main_nav_graph"
         />
     </LinearLayout>

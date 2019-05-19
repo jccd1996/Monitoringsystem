@@ -14,6 +14,7 @@ interface ILoginMVP {
         fun getView():View
         fun navigateToMainActivity()
         fun getActivityFragment(): Activity
+
     }
 
     interface presenter {

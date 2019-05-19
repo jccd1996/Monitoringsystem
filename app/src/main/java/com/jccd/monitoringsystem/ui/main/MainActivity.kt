@@ -1,6 +1,8 @@
 package com.jccd.monitoringsystem.ui.main
 
 import android.app.Activity
+import android.app.DownloadManager
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.core.view.GravityCompat
@@ -16,19 +18,19 @@ import androidx.navigation.NavController
 import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.setupWithNavController
 import com.jccd.monitoringsystem.R
 import com.jccd.monitoringsystem.db.model.User
 import com.jccd.monitoringsystem.ui.LoginActivity
-import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.nav_header_main.view.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, IMainMVP.view {
+
 
     private lateinit var presenter: IMainMVP.presenter
     private lateinit var navController: NavController
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navOptions: NavOptions
+    private lateinit var manager: DownloadManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,29 +38,36 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         presenter = MainPresenter(this)
         presenter.validateLogUser()
 
-        val user = presenter.loadDataUser()
-        setDataToNavDrawer(user)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true);
-        supportActionBar!!.setDisplayShowHomeEnabled(true);
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.setDisplayShowHomeEnabled(true)
 
         drawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
         val toggle = ActionBarDrawerToggle(
             this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
         )
-        navController = Navigation.findNavController(this, R.id.fragment_container_main)
+        navController = Navigation.findNavController(this, R.id.fragment_container_temperature_history)
 
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-
+        manager = getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
         // NavigationUI.setupActionBarWithNavController(this,navController,drawerLayout)
 
         NavigationUI.setupWithNavController(navView, navController)
 
         navView.setNavigationItemSelectedListener(this)
+        presenter.loadDataUser()
+
+        val user: User? = presenter.loadDataUser()
+        if (user != null){
+            setDataToNavDrawer(user!!)
+        }else{
+            finishActivity()
+        }
+
     }
 
     override fun onBackPressed() {
@@ -141,7 +150,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             }
             R.id.nav_download -> {
-
+                presenter.downloadAllDataExcel(manager)
             }
             R.id.nav_log_out -> {
                 presenter.closeSession()
@@ -169,5 +178,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             .setPopUpTo(destination, true)
             .build()
         return navOptions
+    }
+
+    override fun onResume() {
+        super.onResume()
+        presenter.loadDataUser()
     }
 }
