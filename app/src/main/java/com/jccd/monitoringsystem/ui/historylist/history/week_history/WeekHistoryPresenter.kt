@@ -1,6 +1,7 @@
 package com.jccd.monitoringsystem.ui.historylist.history.week_history
 
 import android.util.Log
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jccd.monitoringsystem.MonitoringSystem
 import com.jccd.monitoringsystem.db.model.Feed
@@ -39,6 +40,11 @@ class WeekHistoryPresenter(private val view: IWeekHistory.view) : IWeekHistory.p
                     }
                 }
             })
+        adapter.setOnItemClickListener { item, view ->
+            val fieldItem = item as HistoryAdapter
+            val fieldDetail = fieldItem.feed.createdAt
+            Toast.makeText(MonitoringSystem.sInstance.getContext(),"Test + $fieldDetail", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun loadRecyclerView() {
