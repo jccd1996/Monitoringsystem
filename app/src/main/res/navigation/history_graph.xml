@@ -5,7 +5,7 @@
             app:startDestination="@id/dayHistoryFragment">
 
     <fragment android:id="@+id/monthHistoryFragment"
-              android:name="com.jccd.monitoringsystem.ui.historylist.history.month_history.MonthHistoryFragment"
+              android:name="com.jccd.monitoringsystem.ui.historylist.history.month_history.ui.MonthHistoryFragment"
               android:label="fragment_month_history_temperature"
               tools:layout="@layout/fragment_month_history">
         <argument android:name="type" app:argType="integer" android:defaultValue="0"/>

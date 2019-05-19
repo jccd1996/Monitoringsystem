@@ -4,7 +4,10 @@
                                                    xmlns:tools="http://schemas.android.com/tools"
                                                    android:layout_width="match_parent"
                                                    android:layout_height="wrap_content"
-                                                   android:padding="@dimen/cpb_default_stroke_width">
+                                                   android:clickable="true"
+                                                   android:focusable="true"
+                                                   android:background="?selectableItemBackground"
+                                                   android:paddingTop="2dp">
 
     <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -30,7 +33,7 @@
             <TextView
                     android:text="TextView"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content" android:id="@+id/tvTemperature"
+                    android:layout_height="wrap_content" android:id="@+id/tvValue"
                     app:layout_constraintBottom_toBottomOf="parent"
                     android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/tvDate"
                     app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"

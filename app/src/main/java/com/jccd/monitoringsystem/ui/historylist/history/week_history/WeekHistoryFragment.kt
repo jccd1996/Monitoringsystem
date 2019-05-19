@@ -29,5 +29,4 @@ class WeekHistoryFragment : Fragment() {
         type = arguments!!.getInt(TYPE_KEY)
         Log.d("TYPExD", type.toString())
     }
-
 }
