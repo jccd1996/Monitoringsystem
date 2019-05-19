@@ -15,11 +15,11 @@ import retrofit2.Response
 class MonthHistoryPresenter(private val view: IMonthHistoryMVP.view) : IMonthHistoryMVP.presenter {
 
     private val adapter = GroupAdapter<ViewHolder>()
-    val listTemperature: ArrayList<Feed> = ArrayList()
+    val listFields: ArrayList<Feed> = ArrayList()
 
-    override fun loadMonthFields() {
+    override fun loadMonthFields(type: Int) {
 
-        MonitoringSystem.sInstance.service.getDataWithDateFieldTemperature(Constants.API_KEY_THING_SPEAK, 30)
+        MonitoringSystem.sInstance.service.getDataWithDateFieldTemperature(type, Constants.API_KEY_THING_SPEAK, 30)
             .enqueue(object :
                 Callback<ThingSpeakResponse> {
                 override fun onFailure(call: Call<ThingSpeakResponse>, t: Throwable) {
@@ -27,13 +27,13 @@ class MonthHistoryPresenter(private val view: IMonthHistoryMVP.view) : IMonthHis
                 }
 
                 override fun onResponse(call: Call<ThingSpeakResponse>, response: Response<ThingSpeakResponse>) {
-                    val temperature = response.body()
-                    for (feed in temperature!!.feeds) {
-                        listTemperature.add(feed)
+                    val fields = response.body()
+                    for (feed in fields!!.feeds) {
+                        listFields.add(feed)
 
                     }
-                    for (feed in listTemperature.reversed()) {
-                        adapter.add(HistoryAdapter(feed))
+                    for (feed in listFields.reversed()) {
+                        adapter.add(HistoryAdapter(feed, type))
                     }
                 }
             })

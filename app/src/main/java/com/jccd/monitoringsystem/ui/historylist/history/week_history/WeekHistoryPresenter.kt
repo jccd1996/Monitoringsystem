@@ -16,10 +16,10 @@ import retrofit2.Response
 class WeekHistoryPresenter(private val view: IWeekHistory.view) : IWeekHistory.presenter {
 
     private val adapter = GroupAdapter<ViewHolder>()
-    val listTemperature: ArrayList<Feed> = ArrayList()
+    val listFields: ArrayList<Feed> = ArrayList()
 
-    override fun loadWeekFields() {
-        MonitoringSystem.sInstance.service.getDataWithDateFieldTemperature(Constants.API_KEY_THING_SPEAK, 7)
+    override fun loadWeekFields(type: Int) {
+        MonitoringSystem.sInstance.service.getDataWithDateFieldTemperature(type, Constants.API_KEY_THING_SPEAK, 7)
             .enqueue(object :
                 Callback<ThingSpeakResponse> {
                 override fun onFailure(call: Call<ThingSpeakResponse>, t: Throwable) {
@@ -27,15 +27,15 @@ class WeekHistoryPresenter(private val view: IWeekHistory.view) : IWeekHistory.p
                 }
 
                 override fun onResponse(call: Call<ThingSpeakResponse>, response: Response<ThingSpeakResponse>) {
-                    val temperature = response.body()
+                    val fields = response.body()
                     response.raw().request().url()
                     Log.i("URL_REQUETS", response.raw().request().url().toString())
-                    for (feed in temperature!!.feeds) {
-                        listTemperature.add(feed)
+                    for (feed in fields!!.feeds) {
+                        listFields.add(feed)
 
                     }
-                    for (feed in listTemperature.reversed()) {
-                        adapter.add(HistoryAdapter(feed))
+                    for (feed in listFields.reversed()) {
+                        adapter.add(HistoryAdapter(feed, type))
                     }
                 }
             })

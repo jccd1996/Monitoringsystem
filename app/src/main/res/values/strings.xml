@@ -72,7 +72,7 @@
 
     <!-- TemperatureFragment -->
     <string name="value_temperature">La temperatura es:</string>
-    <string name="temperature_symbol">°</string>
+    <string name="temperature_symbol">°C</string>
     <string name="see_graphics">Ver gráficas</string>
     <string name="date_list_temperature">Dato subido el:</string>
 

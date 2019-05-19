@@ -31,7 +31,7 @@ class MonthHistoryFragment : Fragment(),IMonthHistoryMVP.view {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         presenter.loadRecyclerView()
-        presenter.loadMonthFields()
+        presenter.loadMonthFields(type)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

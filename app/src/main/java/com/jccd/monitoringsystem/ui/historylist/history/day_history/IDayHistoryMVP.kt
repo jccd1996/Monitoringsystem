@@ -8,7 +8,7 @@ interface IDayHistoryMVP {
         fun getRecyclerView(): RecyclerView
     }
     interface presenter{
-        fun loadDayFields()
+        fun loadDayFields(type: Int)
         fun loadRecyclerView()
     }
 }

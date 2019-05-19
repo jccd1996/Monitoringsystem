@@ -36,7 +36,7 @@ class TemperatureFragment : Fragment(), ITemperatureMVP.view {
 
         bTemperatureHistoy.setOnClickListener {
             val intent = Intent(activity, HistoryActivity::class.java)
-            intent.putExtra(TYPE_KEY,1)
+            intent.putExtra(TYPE_KEY,Constants.KEY_TYPE_TEMPERATURE)
             startActivity(intent)
         }
     }

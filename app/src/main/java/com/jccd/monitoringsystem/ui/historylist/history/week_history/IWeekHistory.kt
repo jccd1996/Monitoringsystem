@@ -8,7 +8,7 @@ interface IWeekHistory {
         fun getRecyclerView(): RecyclerView
     }
     interface presenter{
-        fun loadWeekFields()
+        fun loadWeekFields(type: Int)
         fun loadRecyclerView()
     }
 }

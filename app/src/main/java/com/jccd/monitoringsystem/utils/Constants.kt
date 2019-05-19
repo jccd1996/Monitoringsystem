@@ -30,6 +30,10 @@ class Constants {
         val EMPTY_SPACE = " "
         val PICTURE_PATH = "/userProfilePicture/"
         val LOGOUT_USER = 111
+        val KEY_TYPE_TEMPERATURE = 1
+        val KEY_TYPE_WATER_LEVEL = 2
+        val KEY_TYPE_PH_LEVEL = 3
+
 
         val ERROR_LOGIN_ACCOUNT_NOT_EXIST_FIREBASE =
             "com.google.firebase.auth.FirebaseAuthInvalidUserException: There is no user record corresponding to this identifier. The user may have been deleted."

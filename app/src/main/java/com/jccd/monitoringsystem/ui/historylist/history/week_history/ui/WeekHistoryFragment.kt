@@ -34,7 +34,7 @@ class WeekHistoryFragment : Fragment(),IWeekHistory.view {
         super.onViewCreated(view, savedInstanceState)
         presenter = WeekHistoryPresenter(this)
         presenter.loadRecyclerView()
-        presenter.loadWeekFields()
+        presenter.loadWeekFields(type)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

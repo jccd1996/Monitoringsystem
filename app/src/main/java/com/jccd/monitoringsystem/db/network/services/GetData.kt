@@ -6,6 +6,7 @@ import com.jccd.monitoringsystem.db.model.WaterLevel
 import com.jccd.monitoringsystem.db.network.response.ThingSpeakResponse
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 import java.util.*
 
@@ -21,8 +22,9 @@ interface GetData {
     @GET("field/1.json")
     fun getTemperatureAllField(@Query("api_key") apiKey: String): Call<ThingSpeakResponse>
 
-    @GET("field/1.json")
+    @GET("field/{type}.json")
     fun getDataWithDateFieldTemperature(
+        @Path("type") type: Int,
         @Query("api_key") apiKey: String,
         @Query("days") days: Int,
         @Query("timezone") timeZone: String = "America/Bogota"
@@ -34,7 +36,7 @@ interface GetData {
         @Query("timezone") timeZone: String = "America/Bogota"
     ): Call<WaterLevel>
 
-    @GET("field/1.json")
+    @GET("field/2.json")
     fun getWaterLevelAllField(@Query("api_key") apiKey: String): Call<ThingSpeakResponse>
 
     @GET("field/2.json")
@@ -50,7 +52,7 @@ interface GetData {
         @Query("timezone") timeZone: String = "America/Bogota"
     ): Call<PhLevel>
 
-    @GET("field/1.json")
+    @GET("field/3.json")
     fun getPhAllField(@Query("api_key") apiKey: String): Call<ThingSpeakResponse>
 
     @GET("field/3.json")

@@ -8,6 +8,27 @@
                                                    android:id="@+id/frameLayout2">
 
     <!-- TODO: Update blank fragment layout -->
+    <Button
+            android:text="@string/menu_history"
+            android:layout_width="wrap_content"
+            android:drawableStart="@drawable/ic_list_24dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/bWaterLevel"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            style="@style/ButtonStyleDark" android:textSize="18sp"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toStartOf="@+id/button"/>
+    <Button
+            android:text="@string/see_graphics"
+            android:layout_width="wrap_content"
+            android:drawableStart="@drawable/ic_history_white"
+            android:layout_height="wrap_content"
+            android:id="@+id/button3"
+            style="@style/ButtonStyleDark" android:textSize="18sp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toEndOf="@+id/bTemperatureHistoy"
+            app:layout_constraintHorizontal_bias="0.5"/>
     <TextView
             android:text="@string/last_update"
             android:layout_width="wrap_content"

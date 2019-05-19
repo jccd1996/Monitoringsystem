@@ -31,7 +31,7 @@ class DayHistoryFragment : Fragment(),IDayHistoryMVP.view {
         super.onViewCreated(view, savedInstanceState)
         presenter = DayHistoryPresenter (this)
         presenter.loadRecyclerView()
-        presenter.loadDayFields()
+        presenter.loadDayFields(type)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

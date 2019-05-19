@@ -10,7 +10,7 @@ interface IMonthHistoryMVP {
     }
 
     interface presenter{
-        fun loadMonthFields()
+        fun loadMonthFields(type: Int)
         fun loadRecyclerView()
     }
 
