@@ -1,5 +1,6 @@
-package com.jccd.monitoringsystem.ui.historylist.history.month_history
+package com.jccd.monitoringsystem.ui.historylist.history.week_history
 
+import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jccd.monitoringsystem.MonitoringSystem
 import com.jccd.monitoringsystem.db.model.Feed
@@ -12,22 +13,23 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MonthHistoryPresenter(private val view: IMonthHistoryMVP.view) : IMonthHistoryMVP.presenter {
+class WeekHistoryPresenter(private val view: IWeekHistory.view) : IWeekHistory.presenter {
 
     private val adapter = GroupAdapter<ViewHolder>()
     val listTemperature: ArrayList<Feed> = ArrayList()
 
-    override fun loadMonthFields() {
-
-        MonitoringSystem.sInstance.service.getDataWithDateFieldTemperature(Constants.API_KEY_THING_SPEAK, 30)
+    override fun loadWeekFields() {
+        MonitoringSystem.sInstance.service.getDataWithDateFieldTemperature(Constants.API_KEY_THING_SPEAK, 7)
             .enqueue(object :
                 Callback<ThingSpeakResponse> {
                 override fun onFailure(call: Call<ThingSpeakResponse>, t: Throwable) {
-
+                    Log.i("RESPUESTA", t.toString())
                 }
 
                 override fun onResponse(call: Call<ThingSpeakResponse>, response: Response<ThingSpeakResponse>) {
                     val temperature = response.body()
+                    response.raw().request().url()
+                    Log.i("URL_REQUETS", response.raw().request().url().toString())
                     for (feed in temperature!!.feeds) {
                         listTemperature.add(feed)
 

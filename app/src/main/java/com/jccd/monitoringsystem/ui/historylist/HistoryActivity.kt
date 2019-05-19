@@ -17,6 +17,8 @@ class HistoryActivity : AppCompatActivity() {
     private var message: Int = 0
     private lateinit var bundle: Bundle
     private lateinit var navOptions: NavOptions
+    private val TYPE_KEY = "type"
+    private lateinit var toolbar: Toolbar
 
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
@@ -60,16 +62,21 @@ class HistoryActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history)
-        val navView: BottomNavigationView = findViewById(R.id.nav_view)
-        val toolbar: Toolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        supportActionBar!!.setDisplayShowHomeEnabled(true)
-        val intent = intent
-        message = intent.getIntExtra("type", 0)
-        bundle = Bundle()
-        bundle.putInt("type", message)
+        toolbar = findViewById(R.id.toolbar)
+        sendBundle()
+        customToolbar()
+        navigationSetUp()
+    }
 
+    fun destinationFragment(destination: Int): NavOptions {
+        navOptions = NavOptions.Builder()
+            .setPopUpTo(destination, true)
+            .build()
+        return navOptions
+    }
+
+    fun navigationSetUp() {
+        val navView: BottomNavigationView = findViewById(R.id.nav_view)
         findNavController(R.id.fragment_container_temperature_history).setGraph(
             R.navigation.history_graph,
             bundle
@@ -78,10 +85,21 @@ class HistoryActivity : AppCompatActivity() {
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
     }
 
-    fun destinationFragment(destination: Int): NavOptions {
-        navOptions = NavOptions.Builder()
-            .setPopUpTo(destination, true)
-            .build()
-        return navOptions
+    fun sendBundle() {
+        val intent = intent
+        message = intent.getIntExtra(TYPE_KEY, 0)
+        bundle = Bundle()
+        bundle.putInt(TYPE_KEY, message)
+    }
+
+    fun customToolbar() {
+        when (message) {
+            1 -> toolbar.title = this.getString(R.string.menu_temperature)
+            2 -> toolbar.title = this.getString(R.string.menu_level_water)
+            3 -> toolbar.title = this.getString(R.string.menu_ph)
+        }
+        setSupportActionBar(toolbar)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.setDisplayShowHomeEnabled(true)
     }
 }

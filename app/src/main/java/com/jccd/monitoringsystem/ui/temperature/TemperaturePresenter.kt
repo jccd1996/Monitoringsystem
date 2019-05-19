@@ -22,6 +22,7 @@ class TemperaturePresenter(private val view: ITemperatureMVP.view) : ITemperatur
             override fun onResponse(call: Call<Temperature>, response: Response<Temperature>) {
                 val temperature = response.body()
                 Log.i("RESPUESTA", Gson().toJson(temperature))
+                Log.i("URL_REQUETS", response.raw().request().url().toString())
                 view.setDataTemperature(temperature!!)
             }
         })
