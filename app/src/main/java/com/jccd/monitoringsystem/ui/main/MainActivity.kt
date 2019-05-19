@@ -62,7 +62,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         presenter.loadDataUser()
 
         val user: User? = presenter.loadDataUser()
-        setDataToNavDrawer(user!!)
+        if (user != null){
+            setDataToNavDrawer(user!!)
+        }else{
+            finishActivity()
+        }
 
     }
 
