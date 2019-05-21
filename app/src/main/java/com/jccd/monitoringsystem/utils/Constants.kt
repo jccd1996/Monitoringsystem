@@ -16,6 +16,7 @@ class Constants {
         val INCOMPLETE_CELL = 108
         val SHORT_PASSWORD = 109
         val NO_ACCEPT_CONDITIONS = 110
+        val EMPTY_FIELD = 111
         val MINIMUN_FIELD = 3
         val MINIMUN_CELL_NUMBER = 10
         val MINIMUN_CHARACTER_PASSWORD = 6

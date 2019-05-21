@@ -38,10 +38,10 @@ class MonthHistoryPresenter(private val view: IMonthHistoryMVP.view) : IMonthHis
                     }
                 }
             })
-        adapter.setOnItemClickListener { item, view ->
+        adapter.setOnItemClickListener { item, _ ->
             val fieldItem = item as HistoryAdapter
-            val fieldDetail = fieldItem.feed.createdAt
-            Toast.makeText(MonitoringSystem.sInstance.getContext(),"Test + $fieldDetail", Toast.LENGTH_SHORT).show()
+            val fieldDetail = fieldItem.feed
+            view.goToDetail(type, fieldDetail)
         }
     }
 

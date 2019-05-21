@@ -10,6 +10,10 @@ apply plugin: 'com.google.gms.google-services'
 
 apply plugin: 'androidx.navigation.safeargs'
 
+androidExtensions{
+    experimental=true
+}
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -90,7 +94,10 @@ dependencies {
 
     implementation 'com.android.support:multidex:1.0.3'
 
-    implementation "android.arch.persistence.room:runtime:1.1.1" // Room
-    kapt "android.arch.persistence.room:compiler:1.1.1" // Room
+    //Room
+    implementation "android.arch.persistence.room:runtime:1.1.1"
+    kapt "android.arch.persistence.room:compiler:1.1.1"
 
+    //Graph library
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 }

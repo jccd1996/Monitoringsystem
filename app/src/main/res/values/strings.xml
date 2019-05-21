@@ -12,7 +12,7 @@
     <string name="invalid_name">Ingrese un nombre valido</string>
     <string name="invalid_email">Ingrese un correo valido</string>
     <string name="empty_field_cellphone">Ingrese un numero de celular.</string>
-    <string name="incomplete_cell_number">Numero de celular incompleto</string>
+    <string name="incomplete_cell_number">Número de celular incompleto</string>
     <string name="empty_field_password">Ingrese una contraseña</string>
     <string name="short_field_password">La contrasena debe tener minimo 6 caracteres</string>
     <string name="different_field_password">Las contraseña no coinciden</string>
@@ -95,5 +95,10 @@
     <string name="seven_days">Semana</string>
     <string name="one_month">Mes</string>
 
+    <!-- ImportantDetailActivity -->
+    <string name="add_comment_hint">Comentario</string>
+    <string name="msg_failed_updload">Hubo un fallo al subir la información</string>
+    <string name="msg_successfully_updload">Información subida con exito</string>
+    <string name="empty_field">Debes escribir por lo menos 4 caracteres</string>
 
 </resources>
