@@ -1,4 +1,4 @@
-package com.jccd.monitoringsystem.ui.main
+package com.jccd.monitoringsystem.ui.main.ui
 
 import android.app.Activity
 import android.app.DownloadManager
@@ -21,9 +21,12 @@ import androidx.navigation.ui.NavigationUI
 import com.jccd.monitoringsystem.R
 import com.jccd.monitoringsystem.db.model.User
 import com.jccd.monitoringsystem.ui.LoginActivity
+import com.jccd.monitoringsystem.ui.main.IMainMVP
+import com.jccd.monitoringsystem.ui.main.MainPresenter
 import kotlinx.android.synthetic.main.nav_header_main.view.*
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, IMainMVP.view {
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener,
+    IMainMVP.view {
 
 
     private lateinit var presenter: IMainMVP.presenter

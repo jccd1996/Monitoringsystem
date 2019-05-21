@@ -23,6 +23,16 @@ class ValidateFields {
         return pattern.matcher(email).matches()
     }
 
+    fun validateEmptyField(text: String): Int{
+        if(text.isEmpty()){
+            return Constants.EMPTY_FIELD
+        }
+        if (text.length < Constants.MINIMUN_FIELD){
+            return Constants.MINIMUN_FIELD
+        }
+        return Constants.CORRECT_DATA
+    }
+
     fun getValideRegister(
         fullName: String,
         email: String,
@@ -94,8 +104,8 @@ class ValidateFields {
     }
 
     fun setErrorField(id: Int, view: View) {
-        var error = getIdError(id)
-        var labError = view.context.getString(error)
+        val error = getIdError(id)
+        val labError = view.context.getString(error)
         lateinit var editText: EditText
         lateinit var checkBox: CheckBox
         var idView = Constants.ZERO

@@ -12,7 +12,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.jccd.monitoringsystem.R
 import com.jccd.monitoringsystem.ui.login.ILoginMVP
 import com.jccd.monitoringsystem.ui.login.LoginPresenter
-import com.jccd.monitoringsystem.ui.main.MainActivity
+import com.jccd.monitoringsystem.ui.main.ui.MainActivity
 import com.jccd.monitoringsystem.utils.SafeClickListener
 import com.jccd.monitoringsystem.utils.ValidateFields
 import kotlinx.android.synthetic.main.login_fragment.*

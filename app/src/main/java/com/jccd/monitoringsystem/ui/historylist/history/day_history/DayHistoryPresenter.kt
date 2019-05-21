@@ -40,10 +40,10 @@ class DayHistoryPresenter(private val view: IDayHistoryMVP.view) : IDayHistoryMV
                     }
                 }
             })
-        adapter.setOnItemClickListener { item, view ->
+        adapter.setOnItemClickListener { item, _ ->
             val fieldItem = item as HistoryAdapter
-            val fieldDetail = fieldItem.feed.entryId
-            Toast.makeText(MonitoringSystem.sInstance.getContext(),"Test + $fieldDetail", Toast.LENGTH_SHORT).show()
+            val fieldDetail = fieldItem.feed
+            view.goToDetail(type, fieldDetail)
         }
     }
 
