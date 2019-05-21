@@ -10,8 +10,8 @@ apply plugin: 'com.google.gms.google-services'
 
 apply plugin: 'androidx.navigation.safeargs'
 
-androidExtensions{
-    experimental=true
+androidExtensions {
+    experimental = true
 }
 
 android {

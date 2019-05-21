@@ -15,16 +15,17 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".ui.importants.ui.ListImportantActivity">
+        </activity>
         <activity
                 android:name=".ui.importants.ui.ImportantDetailActivity"
-                android:screenOrientation="portrait"
                 android:parentActivityName=".ui.historylist.HistoryActivity"
-        >
+                android:screenOrientation="portrait">
         </activity>
         <activity
                 android:name=".ui.historylist.HistoryActivity"
-                android:launchMode="singleTop"
                 android:label="@string/title_activity_temperature_history"
+                android:launchMode="singleTop"
                 android:parentActivityName=".ui.main.ui.MainActivity">
         </activity>
         <activity
