@@ -13,28 +13,26 @@ import com.jccd.monitoringsystem.R
 import com.jccd.monitoringsystem.db.model.Feed
 import com.jccd.monitoringsystem.ui.historylist.history.day_history.DayHistoryPresenter
 import com.jccd.monitoringsystem.ui.historylist.history.day_history.IDayHistoryMVP
-import com.jccd.monitoringsystem.ui.importants.ui.ImportantDetailActivity
+import com.jccd.monitoringsystem.ui.importants.detail.ui.ImportantDetailActivity
 import kotlinx.android.synthetic.main.fragment_day_history.*
 
-class DayHistoryFragment : Fragment(),IDayHistoryMVP.view {
-
+class DayHistoryFragment : Fragment(), IDayHistoryMVP.view {
 
     private var type: Int = 0
     private val TYPE_KEY = "type"
     private val FEED_DETAIL = "feed"
-    private lateinit var presenter:IDayHistoryMVP.presenter
+    private lateinit var presenter: IDayHistoryMVP.presenter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_day_history, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        presenter = DayHistoryPresenter (this)
+        presenter = DayHistoryPresenter(this)
         presenter.loadRecyclerView()
         presenter.loadDayFields(type)
     }

@@ -1,10 +1,11 @@
-package com.jccd.monitoringsystem.ui.importants
+package com.jccd.monitoringsystem.ui.importants.detail
 
 import android.widget.Toast
 import com.jccd.monitoringsystem.MonitoringSystem
 import com.jccd.monitoringsystem.R
 import com.jccd.monitoringsystem.db.repository.IImportantDetailFeedRepository
 import com.jccd.monitoringsystem.db.repository.ImportantDetailFeedRepository
+import com.jccd.monitoringsystem.ui.importants.detail.ImportantDetailMVP
 import com.jccd.monitoringsystem.utils.Constants
 import com.jccd.monitoringsystem.utils.ValidateFields
 

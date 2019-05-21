@@ -150,6 +150,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 }
             }
             R.id.nav_archive -> {
+                if (navController.currentDestination!!.id != R.id.listImportantFragment) {
+                    navController.popBackStack(R.id.listImportantFragment, true)
+                    navController.navigate(
+                        R.id.listImportantFragment,
+                        null,
+                        destinationFragment(navController.currentDestination!!.id)
+                    )
+                }
 
             }
             R.id.nav_download -> {

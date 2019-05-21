@@ -15,10 +15,10 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".ui.importants.ui.ListImportantActivity">
+        <activity android:name="com.jccd.monitoringsystem.ui.importants.importanlist.ui.ListImportantActivity">
         </activity>
         <activity
-                android:name=".ui.importants.ui.ImportantDetailActivity"
+                android:name=".ui.importants.detail.ui.ImportantDetailActivity"
                 android:parentActivityName=".ui.historylist.HistoryActivity"
                 android:screenOrientation="portrait">
         </activity>

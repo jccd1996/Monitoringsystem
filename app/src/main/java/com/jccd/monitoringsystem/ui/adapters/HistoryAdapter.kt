@@ -6,14 +6,14 @@ import com.jccd.monitoringsystem.db.model.Feed
 import com.jccd.monitoringsystem.utils.Constants
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
-import kotlinx.android.synthetic.main.item_temperature.view.*
+import kotlinx.android.synthetic.main.item_history.view.*
 
 class HistoryAdapter(var feed: Feed, val type: Int) : Item<ViewHolder>() {
 
     val context = MonitoringSystem.sInstance.getContext()
 
     override fun getLayout(): Int {
-        return R.layout.item_temperature
+        return R.layout.item_history
     }
 
     override fun bind(viewHolder: ViewHolder, position: Int) {

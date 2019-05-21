@@ -1,4 +1,4 @@
-package com.jccd.monitoringsystem.ui.importants
+package com.jccd.monitoringsystem.ui.importants.detail
 
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout

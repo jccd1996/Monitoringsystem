@@ -16,4 +16,7 @@
 
     <fragment android:id="@+id/historyFragment" android:name="com.jccd.monitoringsystem.ui.history.HistoryFragment"
               android:label="@string/menu_history" tools:layout="@layout/fragment_history"/>
+    <fragment android:id="@+id/listImportantFragment"
+              android:name="com.jccd.monitoringsystem.ui.importants.importanlist.ui.ListImportantFragment"
+              android:label="fragment_list_important" tools:layout="@layout/fragment_list_important"/>
 </navigation>

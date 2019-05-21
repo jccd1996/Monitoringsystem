@@ -6,7 +6,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.jccd.monitoringsystem.MonitoringSystem
 import com.jccd.monitoringsystem.R
 import com.jccd.monitoringsystem.db.model.ImportantFeed
-import com.jccd.monitoringsystem.ui.importants.ImportantDetailPresenter
+import com.jccd.monitoringsystem.ui.importants.detail.ImportantDetailPresenter
 
 class ImportantDetailFeedRepository(private val presenter: ImportantDetailPresenter) : IImportantDetailFeedRepository {
 

@@ -14,8 +14,7 @@ import com.jccd.monitoringsystem.R
 import com.jccd.monitoringsystem.db.model.Feed
 import com.jccd.monitoringsystem.ui.historylist.history.week_history.IWeekHistory
 import com.jccd.monitoringsystem.ui.historylist.history.week_history.WeekHistoryPresenter
-import com.jccd.monitoringsystem.ui.importants.ui.ImportantDetailActivity
-import com.jccd.monitoringsystem.utils.Constants
+import com.jccd.monitoringsystem.ui.importants.detail.ui.ImportantDetailActivity
 import kotlinx.android.synthetic.main.fragment_week_history.*
 
 

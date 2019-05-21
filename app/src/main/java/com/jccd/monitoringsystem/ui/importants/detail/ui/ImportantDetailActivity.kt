@@ -1,23 +1,20 @@
-package com.jccd.monitoringsystem.ui.importants.ui
+package com.jccd.monitoringsystem.ui.importants.detail.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
-import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.jccd.monitoringsystem.MonitoringSystem
 import com.jccd.monitoringsystem.R
 import com.jccd.monitoringsystem.db.model.Feed
 import com.jccd.monitoringsystem.db.model.ImportantFeed
 import com.jccd.monitoringsystem.db.prefs.SessionManager
-import com.jccd.monitoringsystem.ui.importants.ImportantDetailMVP
-import com.jccd.monitoringsystem.ui.importants.ImportantDetailPresenter
+import com.jccd.monitoringsystem.ui.importants.detail.ImportantDetailMVP
+import com.jccd.monitoringsystem.ui.importants.detail.ImportantDetailPresenter
 import com.jccd.monitoringsystem.utils.Constants
-import com.jccd.monitoringsystem.utils.ValidateFields
 import kotlinx.android.synthetic.main.activity_important_detail.*
 import kotlinx.android.synthetic.main.progress_view.*
 

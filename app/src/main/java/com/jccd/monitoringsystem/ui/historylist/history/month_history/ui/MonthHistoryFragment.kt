@@ -12,7 +12,7 @@ import com.jccd.monitoringsystem.R
 import com.jccd.monitoringsystem.db.model.Feed
 import com.jccd.monitoringsystem.ui.historylist.history.month_history.IMonthHistoryMVP
 import com.jccd.monitoringsystem.ui.historylist.history.month_history.MonthHistoryPresenter
-import com.jccd.monitoringsystem.ui.importants.ui.ImportantDetailActivity
+import com.jccd.monitoringsystem.ui.importants.detail.ui.ImportantDetailActivity
 import kotlinx.android.synthetic.main.fragment_month_history.*
 
 
