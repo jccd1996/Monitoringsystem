@@ -32,14 +32,10 @@ class ListImportantPresenter(val view: IListImportantMVP.view): IListImportantMV
                             adapter.add(ImportantAdapter(importantFeed!!))
                         }
                     }
-                    adapter.setOnItemClickListener { item, view ->
+                    adapter.setOnItemClickListener { item, _ ->
                         val importantFeedItem = item as ImportantAdapter
-                        val importantFeed = importantFeedItem.importantFeed.autor
-                        Toast.makeText(
-                            context,
-                            "Seleccionaste a ${importantFeed}",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        val importantFeed = importantFeedItem.importantFeed
+                        view.goToDetailImportant(importantFeed)
                     }
 
                 }
