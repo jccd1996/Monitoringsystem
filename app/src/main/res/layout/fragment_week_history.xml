@@ -5,11 +5,22 @@
                                                    android:layout_width="match_parent"
                                                    android:layout_height="wrap_content"
                                                    tools:context=".ui.historylist.history.week_history.ui.WeekHistoryFragment"
->
+                                                   android:id="@+id/clWeek">
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/rvWeekHistory"
             android:scrollbars="vertical"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            android:visibility="visible"/>
+
+    <com.github.mikephil.charting.charts.LineChart android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   app:layout_constraintTop_toTopOf="parent"
+                                                   app:layout_constraintBottom_toBottomOf="parent"
+                                                   app:layout_constraintEnd_toEndOf="parent"
+                                                   app:layout_constraintStart_toStartOf="@+id/rvWeekHistory"
+                                                   android:visibility="gone" android:id="@+id/lineChart">
+
+    </com.github.mikephil.charting.charts.LineChart>
 </androidx.constraintlayout.widget.ConstraintLayout>

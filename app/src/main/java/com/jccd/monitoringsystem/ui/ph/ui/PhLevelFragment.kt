@@ -21,6 +21,7 @@ class PhLevelFragment : Fragment(), IPhLevelMVP.view {
 
     private lateinit var presenter: IPhLevelMVP.presenter
     private val TYPE_KEY = "type"
+    private val KEY_GRAPHIC = "isGraphic"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,6 +39,12 @@ class PhLevelFragment : Fragment(), IPhLevelMVP.view {
         bPhLevelHistory.setOnClickListener {
             val intent = Intent(activity, HistoryActivity::class.java)
             intent.putExtra(TYPE_KEY, Constants.KEY_TYPE_PH_LEVEL)
+            startActivity(intent)
+        }
+        bGraphics.setOnClickListener {
+            val intent = Intent(activity, HistoryActivity::class.java)
+            intent.putExtra(TYPE_KEY,Constants.KEY_TYPE_PH_LEVEL)
+            intent.putExtra(KEY_GRAPHIC,true)
             startActivity(intent)
         }
     }

@@ -1,6 +1,7 @@
 package com.jccd.monitoringsystem.ui.historylist.history.day_history
 
 import androidx.recyclerview.widget.RecyclerView
+import com.github.mikephil.charting.charts.LineChart
 import com.jccd.monitoringsystem.db.model.Feed
 
 interface IDayHistoryMVP {

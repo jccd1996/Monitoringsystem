@@ -19,6 +19,7 @@ class WaterLevelFragment : Fragment(), IWaterLevelMVP.view {
 
     private lateinit var presenter: WaterLevelPresenter
     private val TYPE_KEY = "type"
+    private val KEY_GRAPHIC = "isGraphic"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,6 +37,13 @@ class WaterLevelFragment : Fragment(), IWaterLevelMVP.view {
         bWaterLevel.setOnClickListener {
             val intent = Intent(activity, HistoryActivity::class.java)
             intent.putExtra(TYPE_KEY, Constants.KEY_TYPE_WATER_LEVEL)
+            startActivity(intent)
+        }
+
+        bGraphics.setOnClickListener {
+            val intent = Intent(activity, HistoryActivity::class.java)
+            intent.putExtra(TYPE_KEY,Constants.KEY_TYPE_WATER_LEVEL)
+            intent.putExtra(KEY_GRAPHIC,true)
             startActivity(intent)
         }
     }
