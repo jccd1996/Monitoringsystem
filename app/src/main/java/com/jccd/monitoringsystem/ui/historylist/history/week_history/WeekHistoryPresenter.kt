@@ -49,13 +49,25 @@ class WeekHistoryPresenter(private val view: IWeekHistory.view) : IWeekHistory.p
                     }
                     if (isGraphic) {
                         for (feed in listFields) {
-                            when (type){
-                                1 -> listData.add(Entry(feed.entryId.toFloat(),feed.temperature.toFloat()))
-                                2 -> listData.add(Entry(feed.entryId.toFloat(),feed.waterLeve.toFloat()))
-                                3 -> listData.add(Entry(feed.entryId.toFloat(),feed.phLevel.toFloat()))
+                            when (type) {
+                                1 -> {
+                                    if (feed.temperature != null) {
+                                        listData.add(Entry(feed.entryId.toFloat(), feed.temperature.toFloat()))
+                                    }
+                                }
+                                2 -> {
+                                    if (feed.waterLeve != null) {
+                                        listData.add(Entry(feed.entryId.toFloat(), feed.waterLeve.toFloat()))
+                                    }
+                                }
+                                3 -> {
+                                    if (feed.phLevel != null) {
+                                        listData.add(Entry(feed.entryId.toFloat(), feed.phLevel.toFloat()))
+                                    }
+                                }
                             }
                         }
-                        loadGraphic(listData,type)
+                        loadGraphic(listData, type)
                     } else {
                         for (feed in listFields.reversed()) {
                             adapter.add(HistoryAdapter(feed, type))
@@ -85,11 +97,11 @@ class WeekHistoryPresenter(private val view: IWeekHistory.view) : IWeekHistory.p
 
         val xAxis: XAxis = lineChart.xAxis
         xAxis.position = XAxis.XAxisPosition.BOTTOM
-        val set1: LineDataSet = LineDataSet(list,Constants.EMPTY_SPACE)
-        when(type){
-            1 ->set1.label = "Temperatura"
-            2 ->set1.label = "Nivel de agua"
-            3 ->set1.label = "pH"
+        val set1: LineDataSet = LineDataSet(list, Constants.EMPTY_SPACE)
+        when (type) {
+            1 -> set1.label = "Temperatura"
+            2 -> set1.label = "Nivel de agua"
+            3 -> set1.label = "pH"
         }
         set1.fillAlpha = 110
         set1.color = Color.RED
