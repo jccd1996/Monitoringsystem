@@ -15,9 +15,11 @@ class HistoryActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
     private var message: Int = 0
+    private var isGraphic = false
     private lateinit var bundle: Bundle
     private lateinit var navOptions: NavOptions
     private val TYPE_KEY = "type"
+    private val KEY_GRAPHIC = "isGraphic"
     private lateinit var toolbar: Toolbar
 
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
@@ -88,7 +90,9 @@ class HistoryActivity : AppCompatActivity() {
     fun sendBundle() {
         val intent = intent
         message = intent.getIntExtra(TYPE_KEY, 0)
+        isGraphic = intent.getBooleanExtra(KEY_GRAPHIC,false)
         bundle = Bundle()
+        bundle.putBoolean(KEY_GRAPHIC,isGraphic)
         bundle.putInt(TYPE_KEY, message)
     }
 

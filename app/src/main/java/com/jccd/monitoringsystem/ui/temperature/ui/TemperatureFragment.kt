@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import com.jccd.monitoringsystem.R
 import com.jccd.monitoringsystem.db.model.Temperature
+import com.jccd.monitoringsystem.ui.graphics.GraphicActivity
 import com.jccd.monitoringsystem.ui.historylist.HistoryActivity
 import com.jccd.monitoringsystem.ui.temperature.ITemperatureMVP
 import com.jccd.monitoringsystem.ui.temperature.TemperaturePresenter
@@ -20,6 +21,7 @@ class TemperatureFragment : Fragment(), ITemperatureMVP.view {
 
     private lateinit var presenter: ITemperatureMVP.presenter
     private val TYPE_KEY = "type"
+    private val KEY_GRAPHIC = "isGraphic"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,6 +39,14 @@ class TemperatureFragment : Fragment(), ITemperatureMVP.view {
         bTemperatureHistoy.setOnClickListener {
             val intent = Intent(activity, HistoryActivity::class.java)
             intent.putExtra(TYPE_KEY,Constants.KEY_TYPE_TEMPERATURE)
+            intent.putExtra(KEY_GRAPHIC,false)
+            startActivity(intent)
+        }
+
+        bGraphics.setOnClickListener {
+            val intent = Intent(activity, HistoryActivity::class.java)
+            intent.putExtra(TYPE_KEY,Constants.KEY_TYPE_TEMPERATURE)
+            intent.putExtra(KEY_GRAPHIC,true)
             startActivity(intent)
         }
     }

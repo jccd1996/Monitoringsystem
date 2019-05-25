@@ -19,7 +19,7 @@
                 app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
                 style="@style/ButtonStyleDark" android:textSize="18sp"
                 android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toStartOf="@+id/button"/>
+                app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toStartOf="@+id/bGraphics"/>
         <TextView
                 android:text="0"
                 android:layout_width="0dp"
@@ -59,7 +59,7 @@
                 android:layout_width="wrap_content"
                 android:drawableStart="@drawable/ic_history_white"
                 android:layout_height="wrap_content"
-                android:id="@+id/button"
+                android:id="@+id/bGraphics"
                 style="@style/ButtonStyleDark" android:textSize="18sp"
                 android:layout_marginEnd="8dp"
                 app:layout_constraintEnd_toEndOf="parent" android:layout_marginBottom="8dp"

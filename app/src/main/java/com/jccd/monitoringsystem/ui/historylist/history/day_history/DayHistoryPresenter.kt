@@ -24,13 +24,12 @@ class DayHistoryPresenter(private val view: IDayHistoryMVP.view) : IDayHistoryMV
             .enqueue(object :
                 Callback<ThingSpeakResponse> {
                 override fun onFailure(call: Call<ThingSpeakResponse>, t: Throwable) {
-                    Log.i("RESPUESTA", t.toString())
+
                 }
 
                 override fun onResponse(call: Call<ThingSpeakResponse>, response: Response<ThingSpeakResponse>) {
                     val fields = response.body()
                     response.raw().request().url()
-                    Log.i("URL_REQUETS", response.raw().request().url().toString())
                     for (feed in fields!!.feeds) {
                         listFields.add(feed)
 

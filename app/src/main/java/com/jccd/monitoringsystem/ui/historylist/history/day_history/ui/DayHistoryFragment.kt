@@ -20,6 +20,8 @@ class DayHistoryFragment : Fragment(), IDayHistoryMVP.view {
 
     private var type: Int = 0
     private val TYPE_KEY = "type"
+    private val KEY_GRAPHIC = "isGraphic"
+    private var isGraphic = false
     private val FEED_DETAIL = "feed"
     private lateinit var presenter: IDayHistoryMVP.presenter
 
@@ -40,7 +42,10 @@ class DayHistoryFragment : Fragment(), IDayHistoryMVP.view {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         type = arguments!!.getInt(TYPE_KEY)
+        isGraphic = arguments!!.getBoolean(KEY_GRAPHIC)
+
         Log.d("TYPExDDayOnCreate", type.toString())
+        Log.d("TYPExDDayOnCreateGrap", isGraphic.toString())
     }
 
     override fun getRecyclerView(): RecyclerView = rvDayHistory
