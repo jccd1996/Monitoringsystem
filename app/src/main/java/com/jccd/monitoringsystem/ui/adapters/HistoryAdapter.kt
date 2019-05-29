@@ -4,6 +4,7 @@ import com.jccd.monitoringsystem.MonitoringSystem
 import com.jccd.monitoringsystem.R
 import com.jccd.monitoringsystem.db.model.Feed
 import com.jccd.monitoringsystem.utils.Constants
+import com.jccd.monitoringsystem.utils.ConvertDate
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.item_history.view.*
@@ -18,7 +19,7 @@ class HistoryAdapter(var feed: Feed, val type: Int) : Item<ViewHolder>() {
 
     override fun bind(viewHolder: ViewHolder, position: Int) {
 
-        viewHolder.itemView.tvDate.text = feed.createdAt
+        viewHolder.itemView.tvDate.text =ConvertDate(feed.createdAt).convertDateToList()
 
         when (type) {
             1 -> viewHolder.itemView.tvValue.text =

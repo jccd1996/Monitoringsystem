@@ -9,9 +9,10 @@ interface IDayHistoryMVP {
     interface view{
         fun getRecyclerView(): RecyclerView
         fun goToDetail(type: Int, feed: Feed)
+        fun getLineChart(): LineChart
     }
     interface presenter{
-        fun loadDayFields(type: Int)
+        fun loadDayFields(type: Int, isGraphic: Boolean)
         fun loadRecyclerView()
     }
 }

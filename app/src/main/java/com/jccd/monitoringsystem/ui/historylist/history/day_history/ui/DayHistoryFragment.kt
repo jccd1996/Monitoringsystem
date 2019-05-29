@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.github.mikephil.charting.charts.LineChart
 import com.jccd.monitoringsystem.R
 import com.jccd.monitoringsystem.db.model.Feed
 import com.jccd.monitoringsystem.ui.historylist.history.day_history.DayHistoryPresenter
@@ -36,7 +37,15 @@ class DayHistoryFragment : Fragment(), IDayHistoryMVP.view {
         super.onViewCreated(view, savedInstanceState)
         presenter = DayHistoryPresenter(this)
         presenter.loadRecyclerView()
-        presenter.loadDayFields(type)
+
+        if(isGraphic){
+            rvDayHistory.visibility = View.GONE
+            clDayHistory.layoutParams.height = ViewGroup.LayoutParams.MATCH_PARENT
+            presenter.loadDayFields(type,isGraphic)
+
+        }else{
+            presenter.loadDayFields(type,false)
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,6 +58,7 @@ class DayHistoryFragment : Fragment(), IDayHistoryMVP.view {
     }
 
     override fun getRecyclerView(): RecyclerView = rvDayHistory
+    override fun getLineChart(): LineChart = lineChart
 
     override fun goToDetail(type: Int, feed: Feed) {
         val intent = Intent(activity, ImportantDetailActivity::class.java)

@@ -24,6 +24,13 @@ import com.jccd.monitoringsystem.ui.LoginActivity
 import com.jccd.monitoringsystem.ui.main.IMainMVP
 import com.jccd.monitoringsystem.ui.main.MainPresenter
 import kotlinx.android.synthetic.main.nav_header_main.view.*
+import android.Manifest.permission
+import android.Manifest.permission.WRITE_EXTERNAL_STORAGE
+import androidx.core.app.ActivityCompat
+import android.content.pm.PackageManager
+import android.os.Build
+import android.util.Log
+
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener,
     IMainMVP.view {
@@ -161,7 +168,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             }
             R.id.nav_download -> {
-                presenter.downloadAllDataExcel(manager)
+                if (isStoragePermissionGranted()){
+                    presenter.downloadAllDataExcel(manager)
+                }else{
+                    Log.d("NOTIENE","NONONONO")
+                }
+
             }
             R.id.nav_log_out -> {
                 presenter.closeSession()
@@ -194,5 +206,19 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onResume() {
         super.onResume()
         presenter.loadDataUser()
+    }
+
+    fun isStoragePermissionGranted(): Boolean {
+        return if (Build.VERSION.SDK_INT >= 23) {
+            if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                true
+            } else {
+
+                ActivityCompat.requestPermissions(this, arrayOf(permission.WRITE_EXTERNAL_STORAGE), 1)
+                false
+            }
+        } else { //permission is automatically granted on sdk<23 upon installation
+            true
+        }
     }
 }
