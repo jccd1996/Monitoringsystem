@@ -67,9 +67,6 @@ class DayHistoryPresenter(private val view: IDayHistoryMVP.view) : IDayHistoryMV
                             adapter.add(HistoryAdapter(feed, type))
                         }
                     }
-                    for (feed in listFields.reversed()) {
-                        adapter.add(HistoryAdapter(feed, type))
-                    }
                 }
             })
         adapter.setOnItemClickListener { item, _ ->

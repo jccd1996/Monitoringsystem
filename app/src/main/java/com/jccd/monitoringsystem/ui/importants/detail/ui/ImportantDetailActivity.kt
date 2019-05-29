@@ -15,6 +15,7 @@ import com.jccd.monitoringsystem.db.prefs.SessionManager
 import com.jccd.monitoringsystem.ui.importants.detail.ImportantDetailMVP
 import com.jccd.monitoringsystem.ui.importants.detail.ImportantDetailPresenter
 import com.jccd.monitoringsystem.utils.Constants
+import com.jccd.monitoringsystem.utils.ConvertDate
 import kotlinx.android.synthetic.main.activity_important_detail.*
 import kotlinx.android.synthetic.main.progress_view.*
 
@@ -100,7 +101,7 @@ class ImportantDetailActivity : AppCompatActivity(), ImportantDetailMVP.view {
                 tvValue.text = feed.phLevel
             }
         }
-        tvDate.text = feed.createdAt
+        tvDate.text = ConvertDate(feed.createdAt).converToDateColombian()
         setSupportActionBar(toolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)

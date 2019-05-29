@@ -15,6 +15,7 @@ import com.jccd.monitoringsystem.ui.historylist.HistoryActivity
 import com.jccd.monitoringsystem.ui.ph.IPhLevelMVP
 import com.jccd.monitoringsystem.ui.ph.PhLevelPresenter
 import com.jccd.monitoringsystem.utils.Constants
+import com.jccd.monitoringsystem.utils.ConvertDate
 import kotlinx.android.synthetic.main.fragment_ph.*
 
 class PhLevelFragment : Fragment(), IPhLevelMVP.view {
@@ -50,7 +51,7 @@ class PhLevelFragment : Fragment(), IPhLevelMVP.view {
     }
 
     override fun setDataPhLevel(phLevel: PhLevel) {
-        tvDate.text = phLevel.createdAt
+        tvDate.text = ConvertDate(phLevel.createdAt).converToDateColombian()
         tvPhLevel.text = phLevel.phLevel
     }
 

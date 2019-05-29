@@ -13,6 +13,7 @@ import com.jccd.monitoringsystem.ui.historylist.HistoryActivity
 import com.jccd.monitoringsystem.ui.water_level.IWaterLevelMVP
 import com.jccd.monitoringsystem.ui.water_level.WaterLevelPresenter
 import com.jccd.monitoringsystem.utils.Constants
+import com.jccd.monitoringsystem.utils.ConvertDate
 import kotlinx.android.synthetic.main.fragment_water_level.*
 
 class WaterLevelFragment : Fragment(), IWaterLevelMVP.view {
@@ -51,7 +52,7 @@ class WaterLevelFragment : Fragment(), IWaterLevelMVP.view {
     override fun setDataWaterLevel(waterLevel: WaterLevel) {
         tvLevelWater.text = waterLevel.waterLevel + Constants.EMPTY_SPACE +
                 activity!!.applicationContext.getString(R.string.unit_water_level)
-        tvDate.text = waterLevel.createdAt
+        tvDate.text = ConvertDate(waterLevel.createdAt).converToDateColombian()
     }
 
     fun customToolbar() {

@@ -69,9 +69,6 @@ class MonthHistoryPresenter(private val view: IMonthHistoryMVP.view) : IMonthHis
                             adapter.add(HistoryAdapter(feed, type))
                         }
                     }
-                    for (feed in listFields.reversed()) {
-                        adapter.add(HistoryAdapter(feed, type))
-                    }
                 }
             })
         adapter.setOnItemClickListener { item, _ ->
