@@ -1,6 +1,5 @@
 package com.jccd.monitoringsystem.utils
 
-import android.util.Log
 import com.jccd.monitoringsystem.MonitoringSystem
 import com.jccd.monitoringsystem.R
 import java.text.SimpleDateFormat
