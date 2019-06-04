@@ -9,6 +9,7 @@ import android.content.IntentFilter
 import android.net.Uri
 import android.os.Environment
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.google.firebase.auth.FirebaseAuth
 import com.jccd.monitoringsystem.MonitoringSystem
@@ -82,6 +83,7 @@ class MainPresenter(private val view: IMainMVP.view) : IMainMVP.presenter {
                 if (c.moveToFirst()) {
                     val status = c.getInt(c.getColumnIndex(DownloadManager.COLUMN_STATUS))
                     if (status == DownloadManager.STATUS_SUCCESSFUL) {
+                        Toast.makeText(context,context.getText(R.string.download_succsessful),Toast.LENGTH_SHORT).show()
                     }
                 }
                 c.close()

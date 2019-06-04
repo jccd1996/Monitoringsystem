@@ -69,6 +69,7 @@
     <string name="download_data_description">Descargando datos de excel...</string>
     <string name="download_data_file">MonitoringSystem.csv</string>
     <string name="last_update">Última actualización:</string>
+    <string name="download_succsessful">Descarga completada</string>
 
     <!-- TemperatureFragment -->
     <string name="value_temperature">La temperatura es:</string>
