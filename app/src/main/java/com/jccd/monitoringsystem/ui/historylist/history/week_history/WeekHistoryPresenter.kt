@@ -126,7 +126,8 @@ class WeekHistoryPresenter(private val view: IWeekHistory.view) : IWeekHistory.p
         val dataSets: ArrayList<ILineDataSet> = ArrayList()
         dataSets.add(set1)
         val data: LineData = LineData(dataSets)
-        lineChart.data = data
         lineChart.visibility = View.VISIBLE
+        lineChart.data = data
+        lineChart.animateX(1000)
     }
 }

@@ -120,7 +120,8 @@ class DayHistoryPresenter(private val view: IDayHistoryMVP.view) : IDayHistoryMV
         val dataSets: ArrayList<ILineDataSet> = ArrayList()
         dataSets.add(set1)
         val data: LineData = LineData(dataSets)
-        lineChart.data = data
         lineChart.visibility = View.VISIBLE
+        lineChart.data = data
+        lineChart.animateX(1000)
     }
 }

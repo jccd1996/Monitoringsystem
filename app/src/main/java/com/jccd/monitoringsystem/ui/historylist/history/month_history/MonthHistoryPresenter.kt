@@ -15,6 +15,7 @@ import com.jccd.monitoringsystem.db.model.Feed
 import com.jccd.monitoringsystem.db.network.response.ThingSpeakResponse
 import com.jccd.monitoringsystem.ui.adapters.HistoryAdapter
 import com.jccd.monitoringsystem.utils.Constants
+import com.jccd.monitoringsystem.utils.DayAxisValueFormatter
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
 import retrofit2.Call
@@ -95,9 +96,15 @@ class MonthHistoryPresenter(private val view: IMonthHistoryMVP.view) : IMonthHis
         lineChart.isDragEnabled = true
         lineChart.setScaleEnabled(true)
         lineChart.setPinchZoom(true)
+
         lineChart.setTouchEnabled(true)
-        val xAxis: XAxis = lineChart.xAxis
+        val xAxis = lineChart.xAxis
         xAxis.position = XAxis.XAxisPosition.BOTTOM
+//        val xAxisFormatter = DayAxisValueFormatter(lineChart)
+//        xAxis.granularity = 1f // only intervals of 1 day
+//        xAxis.labelCount = 7
+//        xAxis.valueFormatter = xAxisFormatter
+
 
         val set1: LineDataSet = LineDataSet(list, Constants.EMPTY_SPACE)
         when (type) {
@@ -125,7 +132,8 @@ class MonthHistoryPresenter(private val view: IMonthHistoryMVP.view) : IMonthHis
         val dataSets: ArrayList<ILineDataSet> = ArrayList()
         dataSets.add(set1)
         val data: LineData = LineData(dataSets)
-        lineChart.data = data
         lineChart.visibility = View.VISIBLE
+        lineChart.data = data
+        lineChart.animateX(1000)
     }
 }
