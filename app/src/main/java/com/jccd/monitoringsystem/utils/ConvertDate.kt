@@ -58,6 +58,9 @@ class ConvertDate(private val date: String) {
             return SimpleDateFormat("EEEE, d MMMM yyyy HH:mm:ss ").format(dateFormat).capitalize()
         }
 
+        fun stringToDateFloat(date:String): Float {
+            return SimpleDateFormat("yyyy-MM-dd'T'HH:mm").parse(date).time.toFloat()
+        }
     }
 
     fun convertDateToList(): String {

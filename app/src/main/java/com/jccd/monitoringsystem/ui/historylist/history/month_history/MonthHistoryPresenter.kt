@@ -9,17 +9,24 @@ import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
+import com.github.mikephil.charting.formatter.IAxisValueFormatter
+import com.github.mikephil.charting.formatter.ValueFormatter
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet
 import com.jccd.monitoringsystem.MonitoringSystem
 import com.jccd.monitoringsystem.db.model.Feed
 import com.jccd.monitoringsystem.db.network.response.ThingSpeakResponse
 import com.jccd.monitoringsystem.ui.adapters.HistoryAdapter
 import com.jccd.monitoringsystem.utils.Constants
+import com.jccd.monitoringsystem.utils.ConvertDate
+import com.jccd.monitoringsystem.utils.DateFormatter
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import android.R
+
+
 
 class MonthHistoryPresenter(private val view: IMonthHistoryMVP.view) : IMonthHistoryMVP.presenter {
 
@@ -90,9 +97,10 @@ class MonthHistoryPresenter(private val view: IMonthHistoryMVP.view) : IMonthHis
         lineChart.isDragEnabled = true
         lineChart.setScaleEnabled(true)
         lineChart.setPinchZoom(true)
-
+        lineChart.setTouchEnabled(true)
         val xAxis: XAxis = lineChart.xAxis
         xAxis.position = XAxis.XAxisPosition.BOTTOM
+
         val set1: LineDataSet = LineDataSet(list, Constants.EMPTY_SPACE)
         when (type) {
             1 -> set1.label = "Temperatura"

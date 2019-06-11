@@ -8,6 +8,6 @@
     <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/menu_history"/>
+            android:text="@string/menu_about"/>
 
 </FrameLayout>
