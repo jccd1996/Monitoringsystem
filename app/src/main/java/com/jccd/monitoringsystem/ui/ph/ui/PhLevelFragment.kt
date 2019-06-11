@@ -51,7 +51,7 @@ class PhLevelFragment : Fragment(), IPhLevelMVP.view {
     }
 
     override fun setDataPhLevel(phLevel: PhLevel) {
-        tvDate.text = ConvertDate(phLevel.createdAt).converToDateColombian()
+        tvDate.text = ConvertDate.converToDateColombian(phLevel.createdAt)
         tvPhLevel.text = phLevel.phLevel
     }
 

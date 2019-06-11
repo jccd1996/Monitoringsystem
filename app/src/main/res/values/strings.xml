@@ -60,6 +60,7 @@
     <string name="menu_level_water">Nivel del agua</string>
     <string name="menu_ph">Nivel de pH</string>
     <string name="menu_history">Historial</string>
+    <string name="menu_about">Acerca de</string>
     <string name="menu_archive">Destacados</string>
     <string name="menu_download">Descargar Excel</string>
     <string name="menu_title_items">Opciones</string>
@@ -69,6 +70,7 @@
     <string name="download_data_description">Descargando datos de excel...</string>
     <string name="download_data_file">MonitoringSystem.csv</string>
     <string name="last_update">Última actualización:</string>
+    <string name="download_succsessful">Descarga completada</string>
 
     <!-- TemperatureFragment -->
     <string name="value_temperature">La temperatura es:</string>

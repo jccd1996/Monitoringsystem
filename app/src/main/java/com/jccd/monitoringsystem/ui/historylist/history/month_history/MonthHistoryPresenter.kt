@@ -2,7 +2,6 @@ package com.jccd.monitoringsystem.ui.historylist.history.month_history
 
 import android.graphics.Color
 import android.view.View
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.components.XAxis
@@ -11,6 +10,7 @@ import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet
 import com.jccd.monitoringsystem.MonitoringSystem
+import com.jccd.monitoringsystem.R
 import com.jccd.monitoringsystem.db.model.Feed
 import com.jccd.monitoringsystem.db.network.response.ThingSpeakResponse
 import com.jccd.monitoringsystem.ui.adapters.HistoryAdapter
@@ -20,6 +20,8 @@ import com.xwray.groupie.ViewHolder
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import com.jccd.monitoringsystem.utils.MyMarkerView
+
 
 class MonthHistoryPresenter(private val view: IMonthHistoryMVP.view) : IMonthHistoryMVP.presenter {
 
@@ -27,6 +29,8 @@ class MonthHistoryPresenter(private val view: IMonthHistoryMVP.view) : IMonthHis
     val listFields: ArrayList<Feed> = ArrayList()
     val listData: ArrayList<Entry> = ArrayList()
     private lateinit var lineChart: LineChart
+    private lateinit var mv : MyMarkerView
+    val context = MonitoringSystem.getInstance().getContext()!!
 
     override fun loadMonthFields(type: Int, isGraphic: Boolean) {
 
@@ -87,18 +91,33 @@ class MonthHistoryPresenter(private val view: IMonthHistoryMVP.view) : IMonthHis
 
     fun loadGraphic(list: ArrayList<Entry>, type: Int) {
         lineChart = view.getLineChart()
+
         lineChart.isDragEnabled = true
         lineChart.setScaleEnabled(true)
         lineChart.setPinchZoom(true)
-
+        lineChart.setTouchEnabled(true)
         val xAxis: XAxis = lineChart.xAxis
         xAxis.position = XAxis.XAxisPosition.BOTTOM
+
         val set1: LineDataSet = LineDataSet(list, Constants.EMPTY_SPACE)
         when (type) {
-            1 -> set1.label = "Temperatura"
-            2 -> set1.label = "Nivel de agua"
-            3 -> set1.label = "pH"
+            1 -> {
+                set1.label = context.getString(R.string.menu_temperature)
+                mv = MyMarkerView(context, R.layout.custom_marker_view,context.getString(R.string.temperature_symbol))
+            }
+            2 -> {
+                set1.label = context.getString(R.string.menu_level_water)
+                mv = MyMarkerView(context, R.layout.custom_marker_view,context.getString(R.string.unit_water_level))
+            }
+            3 -> {
+                set1.label = context.getString(R.string.menu_ph)
+                mv = MyMarkerView(context, R.layout.custom_marker_view,Constants.EMPTY)
+            }
         }
+
+        mv.chartView = lineChart
+        lineChart.marker = mv
+
         set1.fillAlpha = 110
         set1.color = Color.RED
         set1.lineWidth = 2f

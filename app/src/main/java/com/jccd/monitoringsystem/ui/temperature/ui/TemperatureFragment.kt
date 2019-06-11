@@ -67,12 +67,11 @@ class TemperatureFragment : Fragment(), ITemperatureMVP.view {
     override fun setDataTemperature(temperature: Temperature) {
         tvTemperatura.text = temperature.temperature + Constants.EMPTY_SPACE +
                 activity!!.applicationContext.getString(R.string.temperature_symbol)
-        tvDate.text = ConvertDate(temperature.createdAt).converToDateColombian()
+        tvDate.text = ConvertDate.converToDateColombian(temperature.createdAt)
     }
 
     fun customToolbar(){
         (activity as AppCompatActivity).supportActionBar!!.title =
             activity!!.applicationContext.getString(R.string.menu_temperature)
     }
-
 }

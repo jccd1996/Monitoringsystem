@@ -17,14 +17,14 @@
                 android:id="@+id/nav_level_ph"
                 android:icon="@drawable/ic_ph"
                 android:title="@string/menu_ph"/>
-        <item
-                android:id="@+id/nav_history"
-                android:icon="@drawable/ic_history"
-                android:title="@string/menu_history"/>
     </group>
 
     <item android:title="@string/menu_title_items">
         <menu>
+            <item
+                    android:id="@+id/nav_history"
+                    android:icon="@drawable/ic_help_24dp"
+                    android:title="@string/menu_about"/>
             <item
                     android:id="@+id/nav_archive"
                     android:icon="@drawable/ic_archive_fields"

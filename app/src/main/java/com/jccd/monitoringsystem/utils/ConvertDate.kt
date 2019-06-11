@@ -1,5 +1,6 @@
 package com.jccd.monitoringsystem.utils
 
+import android.annotation.SuppressLint
 import com.jccd.monitoringsystem.MonitoringSystem
 import com.jccd.monitoringsystem.R
 import java.text.SimpleDateFormat
@@ -49,6 +50,19 @@ class ConvertDate(private val date: String) {
         )
     }
 
+    companion object {
+
+        @SuppressLint("SimpleDateFormat")
+        fun converToDateColombian(date: String): String{
+            val dateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(date)
+            return SimpleDateFormat("EEEE, d MMMM yyyy HH:mm:ss ").format(dateFormat).capitalize()
+        }
+
+        fun stringToDateFloat(date:String): Float {
+            return SimpleDateFormat("yyyy-MM-dd'T'HH:mm").parse(date).time.toFloat()
+        }
+    }
+
     fun convertDateToList(): String {
         val strDate = date
         val dateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
@@ -64,4 +78,5 @@ class ConvertDate(private val date: String) {
             dayOfMonth, date.hours, date.minutes, date.seconds
         )
     }
+    fun String.capitalizeWords(): String = split(" ").map { it.capitalize() }.joinToString(" ")
 }

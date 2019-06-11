@@ -52,7 +52,7 @@ class WaterLevelFragment : Fragment(), IWaterLevelMVP.view {
     override fun setDataWaterLevel(waterLevel: WaterLevel) {
         tvLevelWater.text = waterLevel.waterLevel + Constants.EMPTY_SPACE +
                 activity!!.applicationContext.getString(R.string.unit_water_level)
-        tvDate.text = ConvertDate(waterLevel.createdAt).converToDateColombian()
+        tvDate.text = ConvertDate.converToDateColombian(waterLevel.createdAt)
     }
 
     fun customToolbar() {
