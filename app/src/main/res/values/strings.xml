@@ -96,6 +96,9 @@
     <string name="one_day">Hoy</string>
     <string name="seven_days">Semana</string>
     <string name="one_month">Mes</string>
+    <string name="check_sensor">Revisar el sensor</string>
+    <string name="check_tank">Tanque lleno</string>
+
 
     <!-- ImportantDetailActivity -->
     <string name="add_comment_hint">Comentario</string>

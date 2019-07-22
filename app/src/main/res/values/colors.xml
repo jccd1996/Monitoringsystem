@@ -27,6 +27,7 @@
     <item name="darkslategray" type="color">#2f4f4f</item>
     <item name="darkslateblue" type="color">#483d8b</item>
     <item name="green" type="color">#008000</item>
+    <item name="green_succes" type="color">#4BB543</item>
     <item name="red" type="color">#ff0000</item>
     <item name="firebrick" type="color">#b22222</item>
     <item name="brown" type="color">#a52a2a</item>
