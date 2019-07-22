@@ -1,3 +1,135 @@
 <resources>
+    <!-- Register fragment -->
     <string name="app_name">Monitoring system</string>
+    <string name="hint_full_name">Nombre completo</string>
+    <string name="hint_email">Correo Electrónico</string>
+    <string name="hint_password">Contraseña</string>
+    <string name="repeat_password">Repetir contraseña</string>
+    <string name="register">Registrarse</string>
+    <string name="lab_cellPhone">Celular</string>
+    <string name="empty_field_fullname">Ingrese un nombre completo</string>
+    <string name="empty_field_email">Ingrese un correo</string>
+    <string name="invalid_name">Ingrese un nombre valido</string>
+    <string name="invalid_email">Ingrese un correo valido</string>
+    <string name="empty_field_cellphone">Ingrese un numero de celular.</string>
+    <string name="incomplete_cell_number">Número de celular incompleto</string>
+    <string name="empty_field_password">Ingrese una contraseña</string>
+    <string name="short_field_password">La contrasena debe tener minimo 6 caracteres</string>
+    <string name="different_field_password">Las contraseña no coinciden</string>
+    <string name="need_accept_conditions">Debe aceptar los terminos y condiciones</string>
+    <string name="iniciar_sesion">Iniciar sesion</string>
+    <string name="error_load_photo">ERROR Cargando Foto</string>
+    <string name="no_tienes_cuenta">¿No tienes una cuenta?
+        <font fgcolor='#ffffff'>
+            <u>
+                <n>Registrate</n>
+            </u>
+        </font>
+    </string>
+    <string name="welcomeMessage">Bienvenido</string>
+    <string name="check_internet_connection">Revisa tu conexión a internet</string>
+    <string name="close_session">Cerrar sesión</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="lab_dialog_logout_confirmation_message">¿Desea cerrar sesión?</string>
+    <string name="lab_dialog_confirmation_message">Confirmar</string>
+    <string name="lab_dialog_cancel_message">Cancelar</string>
+    <string name="lab_dialog_outapp_confirmation_message">¿Desea salir de la aplicación?</string>
+
+    <!-- Login fragment -->
+    <string name="label_sign_up">Inicia sesión con tu correo</string>
+    <string name="forgot_paswword">¿Olvidaste tu contraseña?</string>
+    <string name="label_login">Ingresar</string>
+
+    <!-- Dialogo Recuperar contrasena -->
+    <string name="info_correo">Ingresa el correo electrónico para recuperar tu contraseña, se te enviara un link
+        inmediatamente a tu correo
+    </string>
+    <string name="label_remember_password">Recordar contraseña</string>
+    <string name="label_send_rember_password">Enviar correo</string>
+    <string name="label_error_send_email">Error al enviar el correo</string>
+    <string name="label_succesfull_send_email">Revisa tu correo electrónico</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Nav drawer -->
+    <string name="menu_temperature">Temperatura</string>
+    <string name="menu_level_water">Nivel del agua</string>
+    <string name="menu_ph">Nivel de pH</string>
+    <string name="menu_history">Historial</string>
+    <string name="menu_about">Acerca de</string>
+    <string name="menu_archive">Destacados</string>
+    <string name="menu_download">Descargar Excel</string>
+    <string name="menu_title_items">Opciones</string>
+
+    <!-- Download Excel -->
+    <string name="download_data">Descargando archivo en excel</string>
+    <string name="download_data_description">Descargando datos de excel...</string>
+    <string name="download_data_file">MonitoringSystem.csv</string>
+    <string name="last_update">Última actualización:</string>
+    <string name="download_succsessful">Descarga completada</string>
+
+    <!-- TemperatureFragment -->
+    <string name="value_temperature">La temperatura es:</string>
+    <string name="temperature_symbol">°C</string>
+    <string name="see_graphics">Ver gráficas</string>
+    <string name="date_list_temperature">Dato subido el:</string>
+
+    <!-- WaterlevelFragment -->
+    <string name="vale_water_level">El nivel del agua es:</string>
+    <string name="unit_water_level">cm</string>
+
+    <!-- PhFragment -->
+    <string name="value_ph_level">El nivel de pH es:</string>
+    <string name="title_activity_temperature_history">TemperatureHistoryActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- HistoryActivity -->
+    <string name="one_day">Hoy</string>
+    <string name="seven_days">Semana</string>
+    <string name="one_month">Mes</string>
+    <string name="check_sensor">Revisar el sensor</string>
+    <string name="check_tank">Tanque lleno</string>
+
+
+    <!-- ImportantDetailActivity -->
+    <string name="add_comment_hint">Comentario</string>
+    <string name="msg_failed_updload">Hubo un fallo al subir la información</string>
+    <string name="msg_successfully_updload">Información subida con exito</string>
+    <string name="empty_field">Debes escribir por lo menos 4 caracteres</string>
+
+    <!-- Dates strings -->
+    <string name="january">Enero</string>
+    <string name="february">Febrero</string>
+    <string name="march">Marzo</string>
+    <string name="april">Abril</string>
+    <string name="may">Mayo</string>
+    <string name="june">Junio</string>
+    <string name="july">Julio</string>
+    <string name="august">Agosto</string>
+    <string name="september">Septiembre</string>
+    <string name="october">Octubre</string>
+    <string name="november">Noviembre</string>
+    <string name="december">Diciembre</string>
+
+    <string name="monday">Lunes</string>
+    <string name="thuesday">Martes</string>
+    <string name="wednesday">Miércoles</string>
+    <string name="thursday">Jueves</string>
+    <string name="friday">Viernes</string>
+    <string name="saturday">Sabado</string>
+    <string name="sunday">Domingo</string>
+
+    <string name="main_date_format">%s %s de %s de %s a las %s:%s:%s</string>
+    <string name="list_date_format">%s/%d/%s Hora: %s:%s:%s</string>
+
+
 </resources>

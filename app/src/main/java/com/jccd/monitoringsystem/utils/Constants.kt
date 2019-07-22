@@ -2,6 +2,9 @@ package com.jccd.monitoringsystem.utils
 
 class Constants {
     companion object {
+        val API_KEY_THING_SPEAK = "HL56NN0FFFEG4ICN"
+        val URL_DOWNLOAD_ALL_DATA = "https://api.thingspeak.com/channels/765396/feeds.csv?api_key=HL56NN0FFFEG4ICN&days=365&timezone=America/Bogota"
+        val BASE_URL = "https://api.thingspeak.com/channels/765396/"
         val CORRECT_DATA = 100
         val EMPTY_FUllNAME = 101
         val EMPTY_EMAIL = 102
@@ -13,6 +16,7 @@ class Constants {
         val INCOMPLETE_CELL = 108
         val SHORT_PASSWORD = 109
         val NO_ACCEPT_CONDITIONS = 110
+        val EMPTY_FIELD = 111
         val MINIMUN_FIELD = 3
         val MINIMUN_CELL_NUMBER = 10
         val MINIMUN_CHARACTER_PASSWORD = 6
@@ -24,8 +28,13 @@ class Constants {
         val CHOOSE_PICTURE = "Seleccionar una foto"
         val NO_PHOTO = "NoPhoto"
         val EMPTY = ""
+        val EMPTY_SPACE = " "
         val PICTURE_PATH = "/userProfilePicture/"
         val LOGOUT_USER = 111
+        val KEY_TYPE_TEMPERATURE = 1
+        val KEY_TYPE_WATER_LEVEL = 2
+        val KEY_TYPE_PH_LEVEL = 3
+
 
         val ERROR_LOGIN_ACCOUNT_NOT_EXIST_FIREBASE =
             "com.google.firebase.auth.FirebaseAuthInvalidUserException: There is no user record corresponding to this identifier. The user may have been deleted."

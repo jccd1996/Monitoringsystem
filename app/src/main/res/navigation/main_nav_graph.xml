@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/main_nav_graph"
+            app:startDestination="@id/temperatureFragment">
+
+    <fragment android:id="@+id/temperatureFragment"
+              android:name="com.jccd.monitoringsystem.ui.temperature.ui.TemperatureFragment"
+              android:label="@string/menu_temperature" tools:layout="@layout/fragment_temperature"/>
+
+    <fragment android:id="@+id/waterLevelFragment" android:name="com.jccd.monitoringsystem.ui.water_level.ui.WaterLevelFragment"
+              android:label="@string/menu_level_water" tools:layout="@layout/fragment_water_level"/>
+
+    <fragment android:id="@+id/phFragment" android:name="com.jccd.monitoringsystem.ui.ph.ui.PhLevelFragment"
+              android:label="@string/menu_ph" tools:layout="@layout/fragment_ph"/>
+
+    <fragment android:id="@+id/historyFragment" android:name="com.jccd.monitoringsystem.ui.history.HistoryFragment"
+              android:label="@string/menu_history" tools:layout="@layout/fragment_history"/>
+    <fragment android:id="@+id/listImportantFragment"
+              android:name="com.jccd.monitoringsystem.ui.importants.importanlist.ui.ListImportantFragment"
+              android:label="fragment_list_important" tools:layout="@layout/fragment_list_important"/>
+</navigation>

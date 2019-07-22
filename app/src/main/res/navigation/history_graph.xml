@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/temperature_history_graph"
+            app:startDestination="@id/dayHistoryFragment">
+
+    <fragment android:id="@+id/monthHistoryFragment"
+              android:name="com.jccd.monitoringsystem.ui.historylist.history.month_history.ui.MonthHistoryFragment"
+              android:label="fragment_month_history_temperature"
+              tools:layout="@layout/fragment_month_history">
+        <argument android:name="type" app:argType="integer" android:defaultValue="0"/>
+    </fragment>
+    <fragment android:id="@+id/weekHistoryFragment"
+              android:name="com.jccd.monitoringsystem.ui.historylist.history.week_history.ui.WeekHistoryFragment"
+              android:label="fragment_week_history_temperature"
+              tools:layout="@layout/fragment_week_history">
+    <argument android:name="type" app:argType="integer" android:defaultValue="0"/>
+    </fragment>
+    <fragment android:id="@+id/dayHistoryFragment"
+              android:name="com.jccd.monitoringsystem.ui.historylist.history.day_history.ui.DayHistoryFragment"
+              android:label="fragment_day_history_temperature" tools:layout="@layout/fragment_day_history">
+        <argument android:name="type" app:argType="integer" android:defaultValue="0"/>
+    </fragment>
+</navigation>
