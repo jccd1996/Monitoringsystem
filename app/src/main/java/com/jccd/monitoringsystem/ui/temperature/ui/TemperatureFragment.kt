@@ -11,23 +11,12 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.jccd.monitoringsystem.R
 import com.jccd.monitoringsystem.db.model.Temperature
-import com.jccd.monitoringsystem.ui.graphics.GraphicActivity
 import com.jccd.monitoringsystem.ui.historylist.HistoryActivity
 import com.jccd.monitoringsystem.ui.temperature.ITemperatureMVP
 import com.jccd.monitoringsystem.ui.temperature.TemperaturePresenter
 import com.jccd.monitoringsystem.utils.Constants
 import com.jccd.monitoringsystem.utils.ConvertDate
 import kotlinx.android.synthetic.main.fragment_temperature.*
-import java.text.SimpleDateFormat
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-import java.time.format.FormatStyle
-import java.util.*
-
-
-
-
-
 
 class TemperatureFragment : Fragment(), ITemperatureMVP.view {
 

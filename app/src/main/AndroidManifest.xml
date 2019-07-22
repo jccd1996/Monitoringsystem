@@ -16,8 +16,6 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".ui.graphics.GraphicActivity">
-        </activity>
         <activity
                 android:name=".ui.importants.info.ImportantInfoActivity"
                 android:parentActivityName=".ui.main.ui.MainActivity"
